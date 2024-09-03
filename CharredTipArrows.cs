@@ -209,7 +209,9 @@ conv.i.v
 pushi.e 2
 conv.i.v
 pushi.e o_inv_charredtip_arrows
-pushi.e scr_makeCharredAmmo
+conv.i.v
+pushi.e gml_Script_scr_makeCharredAmmo
+conv.i.v
 call.i @@NewGMLArray@@(argc=4)
 pop.v.v self.interract_event
 push.v self.in_grid
