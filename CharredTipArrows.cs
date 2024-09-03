@@ -193,9 +193,9 @@ conv.v.b
 bf [1003]
 
 :[1002]
-pushi.e 4
-conv.i.v
 pushi.e 2
+conv.i.v
+pushi.e 1
 conv.i.v
 pushi.e o_inv_charredtip_arrows
 conv.i.v
@@ -204,9 +204,9 @@ popz.v
 b [1006]
 
 :[1003]
-pushi.e 4
-conv.i.v
 pushi.e 2
+conv.i.v
+pushi.e 1
 conv.i.v
 pushi.e o_inv_charredtip_arrows
 conv.i.v
