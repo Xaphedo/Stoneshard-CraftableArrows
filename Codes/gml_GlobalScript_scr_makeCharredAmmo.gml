@@ -3,9 +3,9 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
     if (is_undefined(argument0))
         argument0 = o_inv_charredtiparrows // type of ammo produced
     //if (is_undefined(argument1) || !(argument1 < 0))
-        argument1 = 2 // minimum ammo produced
+        argument1 = 1 // minimum ammo produced
     //if (is_undefined(argument2) || !(argument2 < 0))
-        argument2 = 4 // maximum ammo produced
+        argument2 = 2 // maximum ammo produced
 
     //argument1 = int64(argument1)
     //argument2 = int64(argument2)
@@ -16,7 +16,7 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
     var _colorsNamesArrayIndex = 0
     var _i = 0
     var _k = 0
-    var _j = irandom_range(argument1, argument2)
+    var _j = irandom_range(min(argument1, argument2), max(argument1, argument2))
     while (_k < _j)
     {
         while (_i < _rawObjectsArrayLength)
