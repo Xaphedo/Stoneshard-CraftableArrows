@@ -5,7 +5,7 @@ case "Make_Charred_Arrows":
       scr_makeCharredAmmo(o_inv_charredtiparrows,2,4)
     else
     {
-      interract_event = scr_makeCharredAmmo(o_inv_charredtiparrows,2,4)
+      interract_event = [scr_makeCharredAmmo, o_inv_charredtiparrows, 2, 4]
       if (!in_grid)
         scr_delay_move()
       else
