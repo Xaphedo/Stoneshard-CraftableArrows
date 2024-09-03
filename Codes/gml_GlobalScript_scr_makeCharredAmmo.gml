@@ -40,8 +40,8 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
                     }
                     sh_diss = 220
                 }
-                _i++
             }
+            _i++
         }
         if is_array(_colorsNamesArray)
         {
