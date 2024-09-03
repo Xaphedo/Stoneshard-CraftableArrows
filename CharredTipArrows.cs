@@ -1,4 +1,4 @@
-﻿// Copyright (C)
+// Copyright (C)
 // See LICENSE file for extended copyright information.
 // This file is part of the repository from .
 
