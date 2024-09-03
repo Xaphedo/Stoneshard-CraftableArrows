@@ -142,6 +142,26 @@ namespace CharredTipArrows
         }
     }
 
+    private static IEnumerable<string> TableLogTextIterator(IEnumerable<string> input)
+    {
+        string findtext = "\"cook;"; //the string that the iterator is looking for
+
+        string inserttext = "\"charredAmmo;~w~$~/~ готовит:;~w~$~/~ makes:;~w~$~/~做了：;~w~$~/~ kocht:;~w~$~/~ cocina:;~w~$~/~ prépare :;~w~$~/~ cucina:;~w~$~/~ cozinhou:;~w~$~/~ gotuje:;~w~$~/~ pişirdi:;~w~$~/~ は調理した：;~w~$~/~은(는) 요리했다 :;\", "; //the string that the iterator will insert
+
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
 
 
     public static IEnumerable<string> ContextMenuMouse4AssemblyIterator(IEnumerable<string> input)
@@ -422,6 +442,11 @@ b {jmp_end}";
             Msl.LoadGML("gml_GlobalScript_table_text")
                 .Apply(TableTextIterator)
                 .Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_log_text")
+                .Apply(TableLogTextIterator)
+                //.Peek()
                 .Save();
 
             UndertaleSprite 
