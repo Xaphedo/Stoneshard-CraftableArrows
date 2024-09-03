@@ -2,9 +2,9 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
 {
     if (is_undefined(argument0))
         argument0 = o_inv_charredtiparrows // type of ammo produced
-    //if (is_undefined(argument1) || !(argument1 < 0))
+    if (is_undefined(argument1))
         argument1 = 1 // minimum ammo produced
-    //if (is_undefined(argument2) || !(argument2 < 0))
+    if (is_undefined(argument2))
         argument2 = 2 // maximum ammo produced
 
     //argument1 = int64(argument1)
@@ -29,7 +29,7 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
                 _colorsNamesArrayIndex++
                 var _select = select
                 instance_destroy()
-                with (scr_inventory_add_item(_cookedResult, o_inventory))
+                with (scr_inventory_add_item(_cookedResult, o_inventory, 1))
                 {
                     if _select
                     {
