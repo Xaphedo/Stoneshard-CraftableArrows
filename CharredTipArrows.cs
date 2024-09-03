@@ -198,6 +198,7 @@ conv.i.v
 pushi.e 2
 conv.i.v
 pushi.e o_inv_charredtip_arrows
+conv.i.v
 call.i gml_Script_scr_makeCharredAmmo(argc=3)
 popz.v
 b [1006]
@@ -208,6 +209,7 @@ conv.i.v
 pushi.e 2
 conv.i.v
 pushi.e o_inv_charredtip_arrows
+conv.i.v
 call.i gml_Script_scr_makeCharredAmmo(argc=3)
 pop.v.v self.interract_event
 push.v self.in_grid
