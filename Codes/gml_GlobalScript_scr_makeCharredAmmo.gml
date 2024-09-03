@@ -13,7 +13,6 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
     var _cookedResult = argument0 // could be o_inv_charredtipbolts or o_inv_charredtiparrows
     var _rawObjectsArrayLength = array_length(_rawObjectsArray)
     var _colorsNamesArray = false
-    var _colorsNamesArray = []
     var _colorsNamesArrayIndex = 0
         for (var _i = 0; _i < _rawObjectsArrayLength; _i++)
         {
