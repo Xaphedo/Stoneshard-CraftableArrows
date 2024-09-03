@@ -47,8 +47,9 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
                 global.actionsLogBuffer = scr_actionsLogArrayPattern((_commaEnum + _space), _space, _dot, _colorsNamesArray)
                 scr_actionsLog("charredAmmo", [scr_id_get_name(o_player)]) //gml_GlobalScript_table_log_text
                 audio_play_sound(choose(1645, 1646), 4, 0)
-                _colorsNamesArray = false
             }
+            var _colorsNamesArray = false
+            var _colorsNamesArrayIndex = 0
         }
     }
 
