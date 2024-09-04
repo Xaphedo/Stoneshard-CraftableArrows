@@ -324,7 +324,7 @@ b {jmp_end}";
                 new UIComponent(name:"Minimum charred-tip bolts made from one stick", associatedGlobal:"makeCharredAmmoBoltsMin", UIComponentType.Slider, (0, 20), 1, false),
                 new UIComponent(name:"Maximum charred-tip bolts made from one stick", associatedGlobal:"makeCharredAmmoBoltsMax", UIComponentType.Slider, (0, 20), 2, false),
                 new UIComponent(name:"% of Damage modifier to charred-tip bolts", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, false),
-                new UIComponent(name:"% of Armor Penetration modifier to charred-tip bolts", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false),
+                new UIComponent(name:"% of Armor Penetration modifier to charred-tip bolts", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
             );   
 
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
@@ -398,7 +398,7 @@ b {jmp_end}";
                 new ScriptSet("o_loot_charredtip_bolts", "gml_Object_o_loot_charredtip_bolts_Create_0.gml"),
                 
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Create_0.gml"),
-                new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw),
+                new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw)
 
             };
 
