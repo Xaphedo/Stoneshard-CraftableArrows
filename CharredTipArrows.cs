@@ -30,8 +30,8 @@ namespace CharredTipArrows
     {
         public override string Author => "Xaphedo";
         public override string Name => "Charred-Tip Arrows and Bolts";
-        public override string Description => "Cheap Weak Arrows and Bolts";
-        public override string Version => "0.0.0.2";
+        public override string Description => "Use a cooking fire and a bladed weapon to turn sticks into cheap arrows and bolts";
+        public override string Version => "1.0.0.0";
         public override string TargetVersion => "0.8.2.10";
 
 
