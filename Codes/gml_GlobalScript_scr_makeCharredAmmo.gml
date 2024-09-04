@@ -1,16 +1,32 @@
 function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_makeCharredAmmo
 {
     if (is_undefined(argument0))
-        argument0 = o_inv_charredtiparrows // type of ammo produced
+        argument0 = o_inv_charredtip_arrows // type of ammo produced
     if (is_undefined(argument1))
         argument1 = 1 // minimum ammo produced
     if (is_undefined(argument2))
         argument2 = 2 // maximum ammo produced
+    if (!variable_global_exists("makeCharredAmmoArrowsMin"))
+        global.makeCharredAmmoArrowsMin = argument1
+    if (!variable_global_exists("makeCharredAmmoArrowsMax"))
+        global.makeCharredAmmoArrowsMax = argument2
+    if (!variable_global_exists("makeCharredAmmoBoltsMin"))
+        global.makeCharredAmmoBoltsMin = argument1
+    if (!variable_global_exists("makeCharredAmmoBoltsMax"))
+        global.makeCharredAmmoBoltsMax = argument2
+    if (argument0 == o_inv_charredtip_arrows)
+    {
+        var _ammo_min = global.makeCharredAmmoArrowsMin
+        var _ammo_max = global.makeCharredAmmoArrowsMax
+    }
+    if (argument0 == o_inv_charredtip_bolts)
+    {
+        var _ammo_min = global.makeCharredAmmoBoltsMin
+        var _ammo_max = global.makeCharredAmmoBoltsMax
+    }
 
-    //argument1 = int64(argument1)
-    //argument2 = int64(argument2)
     var _rawObjectsArray = [o_inv_stick_oak, o_inv_stick_linden]
-    var _cookedResult = argument0 // could be o_inv_charredtipbolts or o_inv_charredtiparrows
+    var _cookedResult = argument0 // could be o_inv_charredtip_bolts or o_inv_charredtip_arrows
     var _rawObjectsArrayLength = array_length(_rawObjectsArray)
     var _colorsNamesArray = false
     var _colorsNamesArrayIndex = 0
@@ -21,7 +37,7 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
         {
             var _select = select
             instance_destroy()
-            var _ammo_created = irandom_range(min(argument1, argument2), max(argument1, argument2))
+            var _ammo_created = irandom_range(min(_ammo_min, _ammo_max), max(_ammo_min, _ammo_max))
             with (scr_inventory_add_item(_cookedResult, o_inventory, _ammo_created))
             {
                 if _select
