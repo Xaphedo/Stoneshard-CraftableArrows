@@ -472,6 +472,21 @@ b {jmp_end}";
                 //.Peek()
                 .Save();
 
+            Msl.LoadGML("gml_Object_o_inv_quiver_parent_Create_0")
+                .MatchFrom("ds_map_add(slot_data, \"o_inv_arrows\",") // Finding the line
+                .InsertAbove("ds_map_add(slot_data, \"o_inv_charredtip_arrows\", [\"s_inv_lsa_\", s_lsarrows_marker])") // Inserting the snippet above
+                .Save();
+
+            Msl.LoadGML("gml_Object_o_inv_decorated_quiver_Create_0")
+                .MatchFrom("ds_map_add(slot_data, \"o_inv_arrows\",") // Finding the line
+                .InsertAbove("ds_map_add(slot_data, \"o_inv_charredtip_arrows\", [\"s_inv_lsa_\", s_lsarrows_marker])") // Inserting the snippet above
+                .Save();
+
+            Msl.LoadGML("gml_Object_o_inv_bolt_quiver_parent_Create_0")
+                .MatchFrom("ds_map_add(slot_data, \"o_inv_leafshaped_bolts\",") // Finding the line
+                .InsertAbove("ds_map_add(slot_data, \"o_inv_charredtip_bolts\", [\"s_inv_lsb_\", s_lsbolts_marker])") // Inserting the snippet above
+                .Save();
+
             UndertaleSprite 
             tempSprite = Msl.GetSprite("s_inv_charredtiparrows");
             tempSprite.OriginX = 0; //13;
