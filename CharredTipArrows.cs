@@ -124,15 +124,15 @@ namespace CharredTipArrows
 
     private static IEnumerable<string> CampfireContextIterator(IEnumerable<string> input)
     {
-        string findtext = "\"Cook\""; //the string that the iterator is looking for
+        string findtext = "\"Cook\", "; //the string that the iterator is looking for
 
-        string inserttext = "\"Make_Charred_Arrows\", "; //the string that the iterator will insert
+        string inserttext = "\"Make_Charred_Arrows\", \"Make_Charred_Bolts\", "; //the string that the iterator will insert
 
         foreach(string item in input)
         {
             if (item.Contains(findtext))
             {
-                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                string newItem = item.Insert(item.IndexOf(findtext) + findtext.Length, inserttext); //this adds the new string just after the findtext string
                 yield return newItem;
             }
             else
@@ -141,6 +141,7 @@ namespace CharredTipArrows
             }
         }
     }
+    
 
     private static IEnumerable<string> TableLogTextIterator(IEnumerable<string> input)
     {
