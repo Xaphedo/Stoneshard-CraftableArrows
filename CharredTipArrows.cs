@@ -311,7 +311,302 @@ popenv [1011]
 b {jmp_end}";
             }
         }
+        
     }
+    public static IEnumerable<string> CreateContextMenuAssemblyIterator(IEnumerable<string> input)
+    {
+        bool fill_found = false;
+        bool fill_case_found = false;
+        bool jmptbl_injected = false;
+        string jmp_fill = "";
+        bool only_once = false;
+
+        foreach(string item in input)
+        {
+            yield return item;
+
+            if (!fill_found && item.Contains("Eat"))
+            {
+                fill_found = true;
+            }
+            else if (fill_found && !jmptbl_injected && item.Contains("bt"))
+            {
+                jmptbl_injected = true;
+                jmp_fill = new Regex(@"\[\d+\]").Match(item).Value;
+            
+                yield return @"
+dup.v 0
+push.s ""Make_Charred_Arrows""
+cmp.s.v EQ
+bt [2000]
+
+dup.v 0
+push.s ""Make_Charred_Bolts""
+cmp.s.v EQ
+bt [2200]
+";
+            }
+            else if (jmp_fill != "" && item.Contains(jmp_fill))
+            {
+                fill_case_found = true;
+            }
+            else if (!only_once && fill_case_found && item.Contains("b ["))
+            {
+                only_once = true;
+                string jmp_end = new Regex(@"\[\d+\]").Match(item).Value;
+                yield return @$":[2000]
+pushi.e 101
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+push.s ""Make_Charred_Arrows""
+conv.s.v
+push.v self.context_name
+call.i ds_list_add(argc=3)
+popz.v
+call.i gml_Script_scr_check_sticks_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+bf [2002]
+
+:[2001]
+call.i gml_Script_scr_check_weapon_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+b [2003]
+
+:[2002]
+push.e 0
+
+:[2003]
+bf [2005]
+
+:[2004]
+pushi.e 103
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2018]
+
+:[2005]
+call.i gml_Script_scr_check_sticks_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+bf [2007]
+
+:[2006]
+call.i gml_Script_scr_check_weapon_for_charred_ammo(argc=0)
+conv.v.b
+b [2008]
+
+:[2007]
+push.e 0
+
+:[2008]
+bf [2010]
+
+:[2009]
+pushi.e 104
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2018]
+
+:[2010]
+call.i gml_Script_scr_check_sticks_for_charred_ammo(argc=0)
+conv.v.b
+bf [2012]
+
+:[2011]
+call.i gml_Script_scr_check_weapon_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+b [2013]
+
+:[2012]
+push.e 0
+
+:[2013]
+bf [2015]
+
+:[2014]
+pushi.e 105
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2018]
+
+:[2015]
+push.v other.is_fire
+conv.v.b
+bf [2017]
+
+:[2016]
+pushi.e 0
+conv.i.v
+pushi.e 1
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2018]
+
+:[2017]
+pushi.e 74
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+
+:[2018]
+b {jmp_end}
+
+:[2200]
+pushi.e 102
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+push.s "Make_Charred_Bolts"@85978
+conv.s.v
+push.v self.context_name
+call.i ds_list_add(argc=3)
+popz.v
+call.i gml_Script_scr_check_sticks_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+bf [2202]
+
+:[2201]
+call.i gml_Script_scr_check_weapon_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+b [2203]
+
+:[2202]
+push.e 0
+
+:[2203]
+bf [2205]
+
+:[2204]
+pushi.e 103
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2218]
+
+:[2205]
+call.i gml_Script_scr_check_sticks_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+bf [2207]
+
+:[2206]
+call.i gml_Script_scr_check_weapon_for_charred_ammo(argc=0)
+conv.v.b
+b [2208]
+
+:[2207]
+push.e 0
+
+:[2208]
+bf [2210]
+
+:[2209]
+pushi.e 104
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2218]
+
+:[2210]
+call.i gml_Script_scr_check_sticks_for_charred_ammo(argc=0)
+conv.v.b
+bf [2212]
+
+:[2211]
+call.i gml_Script_scr_check_weapon_for_charred_ammo(argc=0)
+conv.v.b
+not.b
+b [2213]
+
+:[2212]
+push.e 0
+
+:[2213]
+bf [2215]
+
+:[2214]
+pushi.e 105
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2218]
+
+:[2215]
+push.v other.is_fire
+conv.v.b
+bf [2217]
+
+:[2216]
+pushi.e 0
+conv.i.v
+pushi.e 1
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2218]
+
+:[2217]
+pushi.e 74
+conv.i.v
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+
+:[2218]
+b {jmp_end}";
+            }
+        }
 
         public override void PatchMod()
         {
@@ -451,11 +746,6 @@ b {jmp_end}";
                 .InsertBelow("ds_map_add(global.missleData, \"o_inv_charredtip_arrows\", [s_charredtiparrow_shoot, o_charredtip_arrow_used, -4, -4, o_loot_charredtip_arrows])")// Inserting the snippet below
                 //.InsertBelow("ds_map_add(global.missleData, \"o_inv_charredtip_arrows\", [asset_get_index(s_charredtiparrow_shoot), asset_get_index(o_charredtip_arrow_used), -4, -4, asset_get_index(o_loot_charredtip_arrows)])")// Inserting the snippet below
                 .Save(); 
-
-            Msl.LoadGML("gml_GlobalScript_scr_create_context_menu")
-                .MatchFrom("case \"Cook\"") // Finding the line
-                .InsertAbove(ModFiles, "gml_GlobalScript_scr_create_context_menu_add.gml") // Inserting the snippet above
-                .Save();
                 
             Msl.LoadGML("gml_Object_o_player_Other_17")
                 .MatchFrom("event_user(interract_event)") // Finding the line
@@ -547,6 +837,18 @@ b {jmp_end}";
                 .Apply(ContextMenuMouse4AssemblyIterator)
                 .Peek()
                 .Save();
+
+            /*
+            Msl.LoadGML("gml_GlobalScript_scr_create_context_menu")
+                .MatchFrom("case \"Cook\"") // Finding the line
+                .InsertAbove(ModFiles, "gml_GlobalScript_scr_create_context_menu_add.gml") // Inserting the snippet above
+                .Save();
+            */
+            Msl.LoadAssemblyAsString("gml_GlobalScript_scr_create_context_menu")
+                .Apply(CreateContextMenuAssemblyIterator)
+                .Peek()
+                .Save();
+            
         }
     }
 }
