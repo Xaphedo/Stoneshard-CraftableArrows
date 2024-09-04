@@ -485,7 +485,7 @@ pushi.e 102
 conv.i.v
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
-push.s "Make_Charred_Bolts"@85978
+push.s ""Make_Charred_Bolts""
 conv.s.v
 push.v self.context_name
 call.i ds_list_add(argc=3)
