@@ -393,6 +393,8 @@ b {jmp_end}";
 
             Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_sticks_for_charred_ammo.gml"), "scr_check_sticks_for_charred_ammo");
 
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_weapon_for_charred_ammo.gml"), "scr_check_weapon_for_charred_ammo");
+
             Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_makeCharredAmmo.gml"), "scr_makeCharredAmmo");
 
             
