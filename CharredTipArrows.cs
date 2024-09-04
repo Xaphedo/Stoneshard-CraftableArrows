@@ -315,6 +315,17 @@ b {jmp_end}";
         public override void PatchMod()
         {
 
+            Msl.AddMenu("Charred-Tip Arrows and Bolts",
+                new UIComponent(name:"Minimum charred-tip arrows made from a stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, false),
+                new UIComponent(name:"Maximum charred-tip arrows made from a stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, false),
+                new UIComponent(name:"Damage modifier to charred-tip arrows", associatedGlobal:"charredAmmoArrowsDamage", UIComponentType.Slider, (-100, 100), -50, false),
+                new UIComponent(name:"Armor Penetration modifier to charred-tip arrows", associatedGlobal:"charredAmmoArrowsArmorP", UIComponentType.Slider, (-100, 100), -50, false),
+                new UIComponent(name:"Minimum charred-tip bolts made from a stick", associatedGlobal:"makeCharredAmmoBoltsMin", UIComponentType.Slider, (0, 20), 1, false),
+                new UIComponent(name:"Maximum charred-tip bolts made from a stick", associatedGlobal:"makeCharredAmmoBoltsMax", UIComponentType.Slider, (0, 20), 2, false),
+                new UIComponent(name:"Damage modifier to charred-tip bolts", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, false),
+                new UIComponent(name:"Armor Penetration modifier to charred-tip bolts", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false),
+            );   
+
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
                 name:"o_inv_charredtip_arrows",
                 spriteName:"s_inv_charredtiparrows",
