@@ -1,3 +1,4 @@
+/*
 case "Make_Charred_Arrows":
   with (interact_id)
   {
@@ -13,3 +14,4 @@ case "Make_Charred_Arrows":
     }
   }
   break
+*/
