@@ -1,6 +1,7 @@
 # Stoneshard-CraftableArrows
-A WIP mod for Stoneshard that lets the player buy and make arrows. Currently focused on creating "charred-tip arrows" (ie wood-only projectiles with primitive fire-hardened tips), much weaker but also much cheaper compared to existing options.
+A mod for Stoneshard that lets the player buy and make arrows. Currently only adding "charred-tip arrows": these wood-only projectiles with primitive fire-hardened tips are much weaker but also much cheaper compared to existing options.
 
-![StoneShard_e5wRIF34asdfs](https://github.com/user-attachments/assets/a0a984c8-723e-4ba8-8f2d-48dd596c0627)
+<img width="100%" style="max-width:705px" alt="ShareX_PAg3xd6zo8" src="https://github.com/user-attachments/assets/b24d9a42-d351-47b6-b2fc-eb042f7719fd">
 
-![StoneShard_e5wRIF34aL](https://github.com/user-attachments/assets/eded65e5-69b3-44aa-8ff8-27d95ddb0c84)
+
+<img width="100%" style="max-width:644px" alt="StoneShard_JADCcaZlAu" src="https://github.com/user-attachments/assets/a689be44-8e45-459b-a12e-1f45d4c952cb">
