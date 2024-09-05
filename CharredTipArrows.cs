@@ -713,7 +713,7 @@ b {jmp_end}";
             
             Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
                 .Apply(CarpenterIterator)
-                .Peek()
+                //.Peek()
                 .Save();
 
             Msl.LoadGML("gml_GlobalScript_table_weapons_text")
@@ -728,7 +728,7 @@ b {jmp_end}";
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
-                .Peek()
+                //.Peek()
                 .Save();
 
             Msl.LoadGML("gml_Object_o_campfire_crafted_Mouse_5")
@@ -751,7 +751,7 @@ b {jmp_end}";
 /*
             Msl.LoadGML("gml_GlobalScript_table_text")
                 .Apply(TableTextIterator)
-                .Peek()
+                //.Peek()
                 .Save();
 */
             Msl.LoadGML("gml_GlobalScript_table_log_text")
@@ -836,7 +836,7 @@ b {jmp_end}";
             //    .Save();
             Msl.LoadAssemblyAsString("gml_Object_o_context_button_Mouse_4")
                 .Apply(ContextMenuMouse4AssemblyIterator)
-                .Peek()
+                //.Peek()
                 .Save();
 
             /*
@@ -847,7 +847,7 @@ b {jmp_end}";
             */
             Msl.LoadAssemblyAsString("gml_GlobalScript_scr_create_context_menu")
                 .Apply(CreateContextMenuAssemblyIterator)
-                .Peek()
+                //.Peek()
                 .Save();
             
         }
