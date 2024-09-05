@@ -8,7 +8,7 @@ using UndertaleModLib;
 using UndertaleModLib.Models;
 using System.Text.RegularExpressions;
 
-namespace CharredTipArrows
+namespace CraftableArrows
 {
 
     public class ScriptSet
@@ -26,7 +26,7 @@ namespace CharredTipArrows
             Subtype = mySubtype;
         }
     }
-    public class CharredTipArrows : Mod
+    public class CraftableArrows : Mod
     {
         public override string Author => "Xaphedo";
         public override string Name => "Charred-Tip Arrows and Bolts";
