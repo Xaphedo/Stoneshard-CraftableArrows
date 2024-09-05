@@ -101,7 +101,7 @@ namespace CharredTipArrows
             }
         }
     }
-
+/*
     private static IEnumerable<string> TableTextIterator(IEnumerable<string> input)
     {
         string findtext = "\";context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;context_menu_end;\""; //the string that the iterator is looking for
@@ -121,7 +121,7 @@ namespace CharredTipArrows
             }
         }
     }
-
+*/
     private static IEnumerable<string> CampfireContextIterator(IEnumerable<string> input)
     {
         string findtext = "\"Cook\", "; //the string that the iterator is looking for
@@ -355,8 +355,7 @@ bt [2200]
                 only_once = true;
                 string jmp_end = new Regex(@"\[\d+\]").Match(item).Value;
                 yield return @$":[2000]
-pushi.e 101
-conv.i.v
+pushglb.v global.context_menu_makeCharredTipArrowsID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 push.s ""Make_Charred_Arrows""
@@ -382,8 +381,7 @@ push.e 0
 bf [2005]
 
 :[2004]
-pushi.e 103
-conv.i.v
+pushglb.v global.context_menu_noBladeNoSticksID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 pushi.e 0
@@ -411,8 +409,7 @@ push.e 0
 bf [2010]
 
 :[2009]
-pushi.e 104
-conv.i.v
+pushglb.v global.context_menu_yesBladeNoSticksID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 pushi.e 0
@@ -440,8 +437,7 @@ push.e 0
 bf [2015]
 
 :[2014]
-pushi.e 105
-conv.i.v
+pushglb.v global.context_menu_noBladeYesSticksID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 pushi.e 0
@@ -481,8 +477,7 @@ popz.v
 b {jmp_end}
 
 :[2200]
-pushi.e 102
-conv.i.v
+pushglb.v global.context_menu_makeCharredTipBoltsID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 push.s ""Make_Charred_Bolts""
@@ -508,8 +503,7 @@ push.e 0
 bf [2205]
 
 :[2204]
-pushi.e 103
-conv.i.v
+pushglb.v global.context_menu_noBladeNoSticksID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 pushi.e 0
@@ -537,8 +531,7 @@ push.e 0
 bf [2210]
 
 :[2209]
-pushi.e 104
-conv.i.v
+pushglb.v global.context_menu_yesBladeNoSticksID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 pushi.e 0
@@ -566,8 +559,7 @@ push.e 0
 bf [2215]
 
 :[2214]
-pushi.e 105
-conv.i.v
+pushglb.v global.context_menu_noBladeYesSticksID
 pushglb.v global.context_menu
 call.i ds_list_find_value(argc=2)
 pushi.e 0
@@ -607,9 +599,11 @@ popz.v
 b {jmp_end}";
             }
         }
+    }
 
         public override void PatchMod()
         {
+
             Msl.AddMenu("Charred-Tip Arrows",
                 new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, false),
                 new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, false),
@@ -623,7 +617,6 @@ b {jmp_end}";
                 new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, false),
                 new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
             );     
-
 
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
                 name:"o_inv_charredtip_arrows",
@@ -755,12 +748,12 @@ b {jmp_end}";
                 .ReplaceBy(ModFiles, "gml_Object_o_player_Other_17_add.gml") // Inserting the snippet above
                 .Save();
 
-
+/*
             Msl.LoadGML("gml_GlobalScript_table_text")
                 .Apply(TableTextIterator)
                 .Peek()
                 .Save();
-
+*/
             Msl.LoadGML("gml_GlobalScript_table_log_text")
                 .Apply(TableLogTextIterator)
                 //.Peek()
@@ -779,6 +772,11 @@ b {jmp_end}";
             Msl.LoadGML("gml_Object_o_inv_bolt_quiver_parent_Create_0")
                 .MatchFrom("ds_map_add(slot_data, \"o_inv_leafshaped_bolts\",") // Finding the line
                 .InsertAbove("ds_map_add(slot_data, \"o_inv_charredtip_bolts\", [\"s_inv_lsb_\", s_lsbolts_marker])") // Inserting the snippet above
+                .Save();
+
+            Msl.LoadGML("gml_Object_o_textLoader_Other_25")
+                .MatchFrom("scr_tableWriteList(global.context_menu, _array, \"context_menu\")") // Finding the line
+                .InsertBelow(ModFiles, "gml_Object_o_textLoader_Other_25_add.gml") // Inserting the snippet above
                 .Save();
 
             UndertaleSprite 
