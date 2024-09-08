@@ -29,9 +29,9 @@ namespace CraftableArrows
     public class CraftableArrows : Mod
     {
         public override string Author => "Xaphedo";
-        public override string Name => "Charred-Tip Arrows and Bolts";
+        public override string Name => "Craftable Arrows";
         public override string Description => "Use a cooking fire and a bladed weapon to turn sticks into cheap arrows and bolts";
-        public override string Version => "1.0.0.0";
+        public override string Version => "2-0-dev-01";
         public override string TargetVersion => "0.8.2.10";
 
 
