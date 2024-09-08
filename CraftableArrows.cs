@@ -829,6 +829,31 @@ b {jmp_end}";
             tempSprite.SVersion = 3;
             tempSprite.GMS2PlaybackSpeed = 1;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
+
+            // IMPORTANT : this is temporary and for testing purposes. The items will be distributed among more appropriate traders
+            Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet above
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_Object_o_npc_Innkeeper_Create_0_add.gml") // Inserting the snippet above
+                .Save();
+
+
+            // This part adds the capability of adding a variable amount of stackable items to a trader's inventory
+            Msl.LoadGML("gml_Object_o_NPC_Other_24")
+                .MatchFrom("with (scr_guiCreateContainer(global.guiBaseContainerSideLeft, o_trade_inventory))") // Finding the line
+                .InsertBelow(ModFiles, "gml_Object_o_NPC_Other_24_add0.gml") // Inserting the snippet above
+                .Save();
+            Msl.LoadGML("gml_Object_o_NPC_Other_24")
+                .MatchFrom("var g = math_round(owner.gold_k)") // Finding the line
+                .InsertBelow(ModFiles, "gml_Object_o_NPC_Other_24_add1.gml") // Inserting the snippet above
+                .Save();
+
+
+
                 
             //Msl.LoadGML("gml_Object_o_context_button_Mouse_4")
             //    .MatchFrom("case \"Cook\"") // Finding the line
