@@ -852,7 +852,15 @@ b {jmp_end}";
                 .InsertBelow(ModFiles, "gml_Object_o_NPC_Other_24_add1.gml") // Inserting the snippet above
                 .Save();
 
-
+            //This part adds the functionality of splitting stacks within a trader's inventory
+            Msl.LoadGML("gml_Object_o_inv_slot_Mouse_5")
+                .MatchFrom(ModFiles, "gml_Object_o_inv_slot_Mouse_5_match.gml")
+                .ReplaceBy(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add.gml")
+                .Save();
+            Msl.LoadGML("gml_Object_o_split_stack_slider_Other_10")
+                .MatchFrom(ModFiles, "gml_Object_o_split_stack_slider_Other_10_match.gml")
+                .ReplaceBy(ModFiles, "gml_Object_o_split_stack_slider_Other_10_add.gml")
+                .Save();
 
                 
             //Msl.LoadGML("gml_Object_o_context_button_Mouse_4")
