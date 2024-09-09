@@ -31,7 +31,7 @@ namespace CraftableArrows
         public override string Author => "Xaphedo";
         public override string Name => "Craftable Arrows";
         public override string Description => "Use a cooking fire and a bladed weapon to turn sticks into cheap arrows and bolts";
-        public override string Version => "2-0-dev-01";
+        public override string Version => "2-0-dev-02";
         public override string TargetVersion => "0.8.2.10";
 
 
@@ -189,7 +189,7 @@ namespace CraftableArrows
     {
         string findtext = "\"caltrop;Игнорируют"; //the string that the iterator is looking for
         
-        string inserttext = "\"arrowheads_leafshaped;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;//;\", "; //the string that the iterator will insert
+        string inserttext = "\"arrowheads_leafshaped;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;//;\", "; //the string that the iterator will insert
         
         foreach(string item in input)
         {
@@ -210,7 +210,7 @@ namespace CraftableArrows
     {
         string findtext = "\"caltrop;Широко"; //the string that the iterator is looking for
         
-        string inserttext = "\"arrowheads_leafshaped;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;//;\", "; //the string that the iterator will insert
+        string inserttext = "\"arrowheads_leafshaped;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;//;\", "; //the string that the iterator will insert
         
         foreach(string item in input)
         {
@@ -763,6 +763,7 @@ b {jmp_end}";
                 parentName:"o_inv_consum_passive",
                 isVisible:true,
                 isAwake:true,
+                isPersistent: true, 
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
@@ -795,6 +796,7 @@ b {jmp_end}";
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw),
 
                 new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Create_0.gml"),
+                new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Step_0.gml", EventType.Step),
 
                 new ScriptSet("o_loot_arrowheads_leafshaped", "gml_Object_o_loot_arrowheads_leafshaped_Create_0.gml")
 
@@ -833,6 +835,7 @@ b {jmp_end}";
                 //.Peek()
                 .Save();
 
+/*
             Msl.LoadGML("gml_GlobalScript_table_consumables")
                 .Apply(TableConsumablesIterator0)
                 //.Peek()
@@ -852,6 +855,19 @@ b {jmp_end}";
                 .Apply(TableConsumableParameters)
                 .Peek()
                 .Save();
+
+*/
+
+
+        LocalizationItem localizationTable = new(
+            "arrowheads_leafshaped",
+            "Leaf-Shaped Arrowheads",
+            "They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.",
+            "These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency."
+        );
+        localizationTable.InjectTable();
+
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
@@ -905,6 +921,12 @@ b {jmp_end}";
                 .MatchFrom("scr_tableWriteList(global.context_menu, _array, \"context_menu\")") // Finding the line
                 .InsertBelow(ModFiles, "gml_Object_o_textLoader_Other_25_add.gml") // Inserting the snippet above
                 .Save();
+
+            Msl.LoadGML("gml_Object_o_knight_maiden_Create_0")
+                .MatchFrom("scr_inventory_add_item(o_inv_map_osbrook)") // Finding the line
+                .InsertBelow("scr_inventory_add_item(o_inv_arrowheads_leafshaped)") // Inserting the snippet below
+                .Save();
+
 
             UndertaleSprite 
             tempSprite = Msl.GetSprite("s_inv_charredtiparrows");
