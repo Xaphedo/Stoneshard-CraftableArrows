@@ -28,12 +28,12 @@ if (_temp_stacked_items_stock != 0 && is_array(_temp_stacked_items_stock) && arr
             else
             {
                 var _temp_item_to_destroy = instance_create_depth(-15000, -15000, 0, _stack_item_to_add)
-                if variable_instance_exists(id, "stack")
-                    _tempStackOfItemToAdd = stack
+                if variable_instance_exists(_temp_item_to_destroy, "stack")
+                    _tempStackOfItemToAdd = _temp_item_to_destroy.stack
                 else
                     scr_actionsLogUpdate("There is no viable stack information for the following item:" + string(_stack_item_to_add) + ". It will not be added to the trader's inventory.")
-                if variable_instance_exists(id, "stack_limit")
-                    _tempStackLimitOfItemToAdd = stack_limit
+                if variable_instance_exists(_temp_item_to_destroy, "stack_limit")
+                    _tempStackLimitOfItemToAdd = _temp_item_to_destroy.stack_limit
                 else
                     scr_actionsLogUpdate("There is no viable stack limit information for the following item:" + string(_stack_item_to_add) + ". It will not be added to the trader's inventory.")
                 instance_destroy(_temp_item_to_destroy)
