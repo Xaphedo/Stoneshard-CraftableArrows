@@ -164,6 +164,90 @@ namespace CraftableArrows
     }
 
 
+    private static IEnumerable<string> TableConsumablesIterator0(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;Рогульки;"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;//;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
+    private static IEnumerable<string> TableConsumablesIterator1(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;Игнорируют"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;They can be attached to either ~w~Charred-Tip Arrows~/~ or ~w~Charred-Tip Bolts~/~ with just a dab of ~w~Hide Glue~/~.;//;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
+    private static IEnumerable<string> TableConsumablesIterator2(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;Широко"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they easy to carry and they hold their value much more reliably than mere currency.;//;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
+    private static IEnumerable<string> TableConsumableParameters(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;other;;;;metal;Light;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;common;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
 
     public static IEnumerable<string> ContextMenuMouse4AssemblyIterator(IEnumerable<string> input)
     {
@@ -673,6 +757,25 @@ b {jmp_end}";
                 collisionShapeFlags:CollisionShapeFlags.Box
             );
 
+            UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_inv_arrowheads_leafshaped",
+                spriteName:"s_inv_arrowheads_leafshaped",
+                parentName:"o_inv_consum_passive",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_loot_arrowheads_leafshaped",
+                spriteName:"s_loot_caltrops",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+
 
             //listing all the scripts to create.
             ScriptSet[] scriptsToAdd = new ScriptSet[]
@@ -689,7 +792,11 @@ b {jmp_end}";
                 new ScriptSet("o_loot_charredtip_bolts", "gml_Object_o_loot_charredtip_bolts_Create_0.gml"),
                 
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Create_0.gml"),
-                new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw)
+                new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw),
+
+                new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Create_0.gml"),
+
+                new ScriptSet("o_loot_arrowheads_leafshaped", "gml_Object_o_loot_arrowheads_leafshaped_Create_0.gml")
 
             };
 
@@ -724,6 +831,26 @@ b {jmp_end}";
             Msl.LoadGML("gml_GlobalScript_table_weapons_text")
                 .Apply(LogWeaponTextIterator1)
                 //.Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_consumables")
+                .Apply(TableConsumablesIterator0)
+                //.Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_consumables")
+                .Apply(TableConsumablesIterator1)
+                //.Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_consumables")
+                .Apply(TableConsumablesIterator2)
+                .Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_Consumable_Parameters")
+                .Apply(TableConsumableParameters)
+                .Peek()
                 .Save();
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
@@ -830,6 +957,14 @@ b {jmp_end}";
             tempSprite.GMS2PlaybackSpeed = 1;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
 
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_leafshaped");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
 
             // IMPORTANT : this is temporary and for testing purposes. The items will be distributed among more appropriate traders
             Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
@@ -845,11 +980,11 @@ b {jmp_end}";
             // This part adds the capability of adding a variable amount of stackable items to a trader's inventory
             Msl.LoadGML("gml_Object_o_NPC_Other_24")
                 .MatchFrom("with (scr_guiCreateContainer(global.guiBaseContainerSideLeft, o_trade_inventory))") // Finding the line
-                .InsertBelow(ModFiles, "gml_Object_o_NPC_Other_24_add0.gml") // Inserting the snippet above
+                .InsertAbove(ModFiles, "gml_Object_o_NPC_Other_24_add0.gml") // Inserting the snippet above
                 .Save();
             Msl.LoadGML("gml_Object_o_NPC_Other_24")
                 .MatchFrom("var g = math_round(owner.gold_k)") // Finding the line
-                .InsertBelow(ModFiles, "gml_Object_o_NPC_Other_24_add1.gml") // Inserting the snippet above
+                .InsertAbove(ModFiles, "gml_Object_o_NPC_Other_24_add1.gml") // Inserting the snippet above
                 .Save();
 
             //This part adds the functionality of splitting stacks within a trader's inventory
