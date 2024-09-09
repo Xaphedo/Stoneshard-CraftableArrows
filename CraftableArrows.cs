@@ -867,7 +867,7 @@ b {jmp_end}";
         );
         localizationTable.InjectTable();
 
-        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
