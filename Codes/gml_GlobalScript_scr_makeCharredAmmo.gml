@@ -49,10 +49,25 @@ function scr_makeCharredAmmo(argument0,argument1,argument2) //gml_Script_scr_mak
                 }
                 sh_diss = 220
             }
+
+
+            if instance_exists(_cookedResult)
+            {
+            nameof_cookedResult = scr_id_get_name(_cookedResult)
+            }
+            else
+            {
+                var _temp_item_to_destroy = instance_create_depth(-15000, -15000, 0, _cookedResult)
+                    nameof_cookedResult = scr_id_get_name(_cookedResult)
+                instance_destroy(_temp_item_to_destroy)
+            }
+
+            nameof_cookedResult = nameof_cookedResult
+
             for (var _h = 0; _h < _ammo_created; _h++)
             {
                 _colorsNamesArray[_colorsNamesArrayIndex][0] = "~lg~"
-                _colorsNamesArray[_colorsNamesArrayIndex][1] = scr_id_get_name(_cookedResult)
+                _colorsNamesArray[_colorsNamesArrayIndex][1] = string(nameof_cookedResult)
                 _colorsNamesArrayIndex++
             }
             if is_array(_colorsNamesArray)

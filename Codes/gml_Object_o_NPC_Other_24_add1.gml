@@ -1,9 +1,9 @@
 if (_temp_stacked_items_stock != 0 && is_array(_temp_stacked_items_stock) && array_length(_temp_stacked_items_stock) > 0)
 {
     var _stacked_i_s = _temp_stacked_items_stock
-    show_message("_stacked_i_s is " + string(_stacked_i_s))
+    //show_message("_stacked_i_s is " + string(_stacked_i_s))
     if ((array_length(_stacked_i_s) % 3) != 0)
-        show_message("stacked_items_stock is not a multiple of 3! Stackable items will not be added")
+        scr_actionsLogUpdate("stacked_items_stock is not a multiple of 3! Stackable items will not be added")
     else
     {
         for (i = 0; i < array_length(_stacked_i_s); i += 3)
