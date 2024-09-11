@@ -210,7 +210,7 @@ namespace CraftableArrows
     {
         string findtext = "\"caltrop;Широко"; //the string that the iterator is looking for
         
-        string inserttext = "\"arrowheads_leafshaped;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency.;//;\", "; //the string that the iterator will insert
+        string inserttext = "\"arrowheads_leafshaped;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;//;\", "; //the string that the iterator will insert
         
         foreach(string item in input)
         {
@@ -280,6 +280,16 @@ dup.v 0
 push.s ""Make_Charred_Bolts""
 cmp.s.v EQ
 bt [1010]
+
+dup.v 0
+push.s ""Arrowheads_Make_Arrows""
+cmp.s.v EQ
+bt [1020]
+
+dup.v 0
+push.s ""Arrowheads_Make_Bolts""
+cmp.s.v EQ
+bt [1030]
 ";
             }
             else if (jmp_fill != "" && item.Contains(jmp_fill))
@@ -392,7 +402,40 @@ popz.v
 
 :[1016]
 popenv [1011]
-b {jmp_end}";
+b {jmp_end}
+
+
+:[1020]
+push.v self.interact_id
+pushi.e -9
+pushenv [1022]
+
+:[1021]
+pushi.e o_inv_charredtip_arrows
+conv.i.v
+call.i gml_Script_scr_glueArrowheads(argc=1)
+popz.v
+
+:[1022]
+popenv [1021]
+b {jmp_end}
+
+
+:[1030]
+push.v self.interact_id
+pushi.e -9
+pushenv [1032]
+
+:[1031]
+pushi.e o_inv_charredtip_bolts
+conv.i.v
+call.i gml_Script_scr_glueArrowheads(argc=1)
+popz.v
+
+:[1032]
+popenv [1031]
+b {jmp_end}
+";
             }
         }
         
@@ -428,6 +471,16 @@ dup.v 0
 push.s ""Make_Charred_Bolts""
 cmp.s.v EQ
 bt [2200]
+
+dup.v 0
+push.s ""Arrowheads_Make_Arrows""
+cmp.s.v EQ
+bt [2400]
+
+dup.v 0
+push.s ""Arrowheads_Make_Bolts""
+cmp.s.v EQ
+bt [2600]
 ";
             }
             else if (jmp_fill != "" && item.Contains(jmp_fill))
@@ -680,7 +733,218 @@ call.i ds_list_add(argc=3)
 popz.v
 
 :[2218]
-b {jmp_end}";
+b {jmp_end}
+
+:[2400]
+pushglb.v global.context_menu_arrowheadsMakeArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+push.s ""Arrowheads_Make_Arrows""
+conv.s.v
+push.v self.context_name
+call.i ds_list_add(argc=3)
+popz.v
+call.i gml_Script_scr_check_chartiparrows_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2402]
+
+:[2401]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2403]
+
+:[2402]
+push.e 0
+
+:[2403]
+bf [2405]
+
+:[2404]
+pushglb.v global.context_menu_noGlueNoCharredtipArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2416]
+
+:[2405]
+call.i gml_Script_scr_check_chartiparrows_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2407]
+
+:[2406]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+b [2408]
+
+:[2407]
+push.e 0
+
+:[2408]
+bf [2410]
+
+:[2409]
+pushglb.v global.context_menu_yesGlueNoCharredtipArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2416]
+
+:[2410]
+call.i gml_Script_scr_check_chartiparrows_for_arrowheads(argc=0)
+conv.v.b
+bf [2412]
+
+:[2411]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2413]
+
+:[2412]
+push.e 0
+
+:[2413]
+bf [2415]
+
+:[2414]
+pushglb.v global.context_menu_noGlueYesCharredtipArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2416]
+
+:[2415]
+pushi.e 0
+conv.i.v
+pushi.e 1
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+
+:[2416]
+b {jmp_end}
+
+:[2600]
+pushglb.v global.context_menu_arrowheadsMakeBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+push.s ""Arrowheads_Make_Bolts""
+conv.s.v
+push.v self.context_name
+call.i ds_list_add(argc=3)
+popz.v
+call.i gml_Script_scr_check_chartipbolts_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2602]
+
+:[2601]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2603]
+
+:[2602]
+push.e 0
+
+:[2603]
+bf [2605]
+
+:[2604]
+pushglb.v global.context_menu_noGlueNoCharredtipBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2616]
+
+:[2605]
+call.i gml_Script_scr_check_chartipbolts_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2607]
+
+:[2606]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+b [2608]
+
+:[2607]
+push.e 0
+
+:[2608]
+bf [2610]
+
+:[2609]
+pushglb.v global.context_menu_yesGlueNoCharredtipBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2616]
+
+:[2610]
+call.i gml_Script_scr_check_chartipbolts_for_arrowheads(argc=0)
+conv.v.b
+bf [2612]
+
+:[2611]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2613]
+
+:[2612]
+push.e 0
+
+:[2613]
+bf [2615]
+
+:[2614]
+pushglb.v global.context_menu_noGlueYesCharredtipBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2616]
+
+:[2615]
+pushi.e 0
+conv.i.v
+pushi.e 1
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+
+:[2616]
+b {jmp_end}
+";
             }
         }
     }
@@ -708,6 +972,7 @@ b {jmp_end}";
                 parentName:"o_inv_arrows_parent",
                 isVisible:true,
                 isAwake:true,
+                isPersistent: true, 
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
@@ -736,6 +1001,7 @@ b {jmp_end}";
                 parentName:"o_inv_bolts_parent",
                 isVisible:true,
                 isAwake:true,
+                isPersistent: true, 
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
@@ -757,10 +1023,19 @@ b {jmp_end}";
                 collisionShapeFlags:CollisionShapeFlags.Box
             );
 
+            UndertaleGameObject invArrowheadsParent = Msl.AddObject(
+                name:"o_inv_arrowheads_parent", //based on o_inv_ammunition_parent
+                parentName:"o_inv_consum_passive",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
             UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
                 name:"o_inv_arrowheads_leafshaped",
                 spriteName:"s_inv_arrowheads_leafshaped",
-                parentName:"o_inv_consum_passive",
+                parentName:"o_inv_arrowheads_parent",
                 isVisible:true,
                 isAwake:true,
                 isPersistent: true, 
@@ -775,6 +1050,26 @@ b {jmp_end}";
                 isAwake:true,
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
+
+            UndertaleGameObject invHideGlue = Msl.AddObject(
+                name:"o_inv_hideglue",
+                spriteName:"s_inv_hideglue",
+                parentName:"o_inv_consum_passive",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootHideGlue = Msl.AddObject(
+                name:"o_loot_hideglue",
+                spriteName:"s_loot_stardust",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
 
 
 
@@ -795,10 +1090,18 @@ b {jmp_end}";
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Create_0.gml"),
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw),
 
-                new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Create_0.gml"),
-                new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Step_0.gml", EventType.Step),
+                new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Create_0.gml"),
+                new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Step_0.gml", EventType.Step),
+                new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Other_10.gml", EventType.Other, 10),
 
-                new ScriptSet("o_loot_arrowheads_leafshaped", "gml_Object_o_loot_arrowheads_leafshaped_Create_0.gml")
+                new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Create_0.gml"),
+
+                new ScriptSet("o_loot_arrowheads_leafshaped", "gml_Object_o_loot_arrowheads_leafshaped_Create_0.gml"),
+
+                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Create_0.gml"),
+                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Step_0.gml", EventType.Step),
+
+                new ScriptSet("o_loot_hideglue", "gml_Object_o_loot_hideglue_Create_0.gml")
 
             };
 
@@ -818,6 +1121,14 @@ b {jmp_end}";
             Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_weapon_for_charred_ammo.gml"), "scr_check_weapon_for_charred_ammo");
 
             Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_makeCharredAmmo.gml"), "scr_makeCharredAmmo");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_glueArrowheads.gml"), "scr_glueArrowheads");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_hideglue_for_arrowheads.gml"), "scr_check_hideglue_for_arrowheads");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_chartiparrows_for_arrowheads.gml"), "scr_check_chartiparrows_for_arrowheads");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_chartipbolts_for_arrowheads.gml"), "scr_check_chartipbolts_for_arrowheads");
 
             
             Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
@@ -862,12 +1173,21 @@ b {jmp_end}";
         LocalizationItem localizationTable = new(
             "arrowheads_leafshaped",
             "Leaf-Shaped Arrowheads",
-            "They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.",
-            "These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value much more reliably than mere currency."
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
+
+        localizationTable = new(
+            "hideglue",
+            "Hide Glue",
+            "A small dab of it can be used to attach ~gr~Arrowheads~/~ to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~.",
+            "Worked hides that have been dried, diced, and boiled several times over. It smells much better than it tastes."
         );
         localizationTable.InjectTable();
 
         Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "hideglue", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.organic, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
@@ -922,9 +1242,14 @@ b {jmp_end}";
                 .InsertBelow(ModFiles, "gml_Object_o_textLoader_Other_25_add.gml") // Inserting the snippet above
                 .Save();
 
-            Msl.LoadGML("gml_Object_o_knight_maiden_Create_0")
+            /*Msl.LoadGML("gml_Object_o_knight_maiden_Create_0")
                 .MatchFrom("scr_inventory_add_item(o_inv_map_osbrook)") // Finding the line
                 .InsertBelow("scr_inventory_add_item(o_inv_arrowheads_leafshaped)") // Inserting the snippet below
+                .Save();*/
+
+            Msl.LoadGML("gml_Object_o_inv_slot_Mouse_5")
+                .MatchFrom("else if object_is_ancestor(object_index, o_inv_ammunition_parent)")
+                .InsertAbove(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add1.gml")
                 .Save();
 
 
@@ -987,6 +1312,14 @@ b {jmp_end}";
             tempSprite.GMS2PlaybackSpeed = 15;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
 
+            tempSprite = Msl.GetSprite("s_inv_hideglue");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
 
             // IMPORTANT : this is temporary and for testing purposes. The items will be distributed among more appropriate traders
             Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
@@ -1012,7 +1345,7 @@ b {jmp_end}";
             //This part adds the functionality of splitting stacks within a trader's inventory
             Msl.LoadGML("gml_Object_o_inv_slot_Mouse_5")
                 .MatchFrom(ModFiles, "gml_Object_o_inv_slot_Mouse_5_match.gml")
-                .ReplaceBy(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add.gml")
+                .ReplaceBy(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add0.gml")
                 .Save();
             Msl.LoadGML("gml_Object_o_split_stack_slider_Other_10")
                 .MatchFrom(ModFiles, "gml_Object_o_split_stack_slider_Other_10_match.gml")
