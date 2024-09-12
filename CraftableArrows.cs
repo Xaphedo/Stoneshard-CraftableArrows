@@ -1074,7 +1074,7 @@ b {jmp_end}
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
-            UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
+            UndertaleGameObject invArrowheadsBroadhead = Msl.AddObject(
                 name:"o_inv_arrowheads_broadhead",
                 spriteName:"s_inv_arrowheads_broadhead",
                 parentName:"o_inv_arrowheads_parent",
@@ -1084,7 +1084,7 @@ b {jmp_end}
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
-            UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
+            UndertaleGameObject lootArrowheadsBroadhead = Msl.AddObject(
                 name:"o_loot_arrowheads_broadhead",
                 spriteName:"s_loot_arrowheads_generic",
                 parentName:"o_consument_loot",
@@ -1093,7 +1093,7 @@ b {jmp_end}
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
-            UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
+            UndertaleGameObject invArrowheadsBodkin = Msl.AddObject(
                 name:"o_inv_arrowheads_bodkin",
                 spriteName:"s_inv_arrowheads_bodkin",
                 parentName:"o_inv_arrowheads_parent",
@@ -1103,7 +1103,7 @@ b {jmp_end}
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
-            UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
+            UndertaleGameObject lootArrowheadsBodkin = Msl.AddObject(
                 name:"o_loot_arrowheads_bodkin",
                 spriteName:"s_loot_arrowheads_generic",
                 parentName:"o_consument_loot",
