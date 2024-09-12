@@ -1132,7 +1132,7 @@ b {jmp_end}
                 new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Create_0.gml"),
                 new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Step_0.gml", EventType.Step),
 
-                new ScriptSet("o_loot_hideglue", "gml_Object_o_loot_hideglue_Create_0.gml")
+                new ScriptSet("o_loot_hideglue", "gml_Object_o_loot_hideglue_Create_0.gml"),
 
                 new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Create_0.gml"),
                 new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Step_0.gml", EventType.Step),
@@ -1148,7 +1148,7 @@ b {jmp_end}
 
                 new ScriptSet("o_inv_arrowheads_bodkin", "gml_Object_o_inv_arrowheads_bodkin_Create_0.gml"),
 
-                new ScriptSet("o_loot_arrowheads_bodkin", "gml_Object_o_loot_arrowheads_bodkin_Create_0.gml"),
+                new ScriptSet("o_loot_arrowheads_bodkin", "gml_Object_o_loot_arrowheads_bodkin_Create_0.gml")
 
             };
 
