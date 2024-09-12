@@ -1035,7 +1035,7 @@ b {jmp_end}
 
             UndertaleGameObject lootHideGlue = Msl.AddObject(
                 name:"o_loot_hideglue",
-                spriteName:"s_loot_stardust",
+                spriteName:"s_loot_hideglue",
                 parentName:"o_consument_loot",
                 isVisible:true,
                 isAwake:true,
@@ -1399,6 +1399,13 @@ b {jmp_end}
             tempSprite.SVersion = 3;
             tempSprite.GMS2PlaybackSpeed = 15;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
+            tempSprite = Msl.GetSprite("s_loot_arrowheads_generic");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite = Msl.GetSprite("s_loot_hideglue");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
 
 
             // IMPORTANT : this is temporary and for testing purposes. The items will be distributed among more appropriate traders
