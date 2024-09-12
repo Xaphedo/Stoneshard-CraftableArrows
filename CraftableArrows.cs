@@ -967,7 +967,7 @@ b {jmp_end}
             );     
 
             Msl.AddMenu("Arrowheads",
-                new UIComponent(name:"Arrowheads trading category", associatedGlobal:"arrowheadsTradingCat", UIComponentType.ComboBox, new string[valuables,ingredients] {"Valuables", "Ingredients",})
+                new UIComponent(name:"Arrowheads trading category", associatedGlobal:"arrowheadsTradingCat", UIComponentType.ComboBox, new string[valuable,ingredient,ammo] {"Valuable", "Ingredient","Ammo"})
             ); 
 
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
