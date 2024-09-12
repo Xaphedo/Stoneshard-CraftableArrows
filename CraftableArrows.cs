@@ -953,23 +953,23 @@ b {jmp_end}
         {
 
             Msl.AddMenu("Charred-Tip Arrows",
-                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, false),
-                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, false),
-                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoArrowsDamage", UIComponentType.Slider, (-100, 100), -50, false),
-                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoArrowsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
+                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, true),
+                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, true),
+                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoArrowsDamage", UIComponentType.Slider, (-100, 100), -50, true),
+                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoArrowsArmorP", UIComponentType.Slider, (-100, 100), -50, true)
             ); 
 
             Msl.AddMenu("Charred-Tip Bolts",
-                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMin", UIComponentType.Slider, (0, 20), 1, false),
-                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMax", UIComponentType.Slider, (0, 20), 2, false),
-                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, false),
-                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
+                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMin", UIComponentType.Slider, (0, 20), 1, true),
+                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMax", UIComponentType.Slider, (0, 20), 2, true),
+                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, true),
+                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, true)
             );     
 
             Msl.AddMenu("Arrowheads",
-                new UIComponent(name:"Arrowheads trading category", associatedGlobal:"arrowheadsTradingCat", UIComponentType.ComboBox, new string[valuable,ingredient,ammo] {"Valuable", "Ingredient","Ammo"})
-            ); 
-
+                 new UIComponent(name:"Arrowheads trading category", associatedGlobal:"arrowheadsTradingCat", UIComponentType.ComboBox, new[] {"valuable", "ingredient","ammo"}, true)
+            );
+            
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
                 name:"o_inv_charredtip_arrows",
                 spriteName:"s_inv_charredtiparrows",
