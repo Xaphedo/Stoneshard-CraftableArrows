@@ -1023,6 +1023,25 @@ b {jmp_end}
                 collisionShapeFlags:CollisionShapeFlags.Box
             );
 
+            UndertaleGameObject invHideGlue = Msl.AddObject(
+                name:"o_inv_hideglue",
+                spriteName:"s_inv_hideglue",
+                parentName:"o_inv_consum_passive",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootHideGlue = Msl.AddObject(
+                name:"o_loot_hideglue",
+                spriteName:"s_loot_stardust",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+            
             UndertaleGameObject invArrowheadsParent = Msl.AddObject(
                 name:"o_inv_arrowheads_parent", //based on o_inv_ammunition_parent
                 parentName:"o_inv_consum_passive",
@@ -1051,24 +1070,44 @@ b {jmp_end}
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
-            UndertaleGameObject invHideGlue = Msl.AddObject(
-                name:"o_inv_hideglue",
-                spriteName:"s_inv_hideglue",
-                parentName:"o_inv_consum_passive",
+            UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_inv_arrowheads_broadhead",
+                spriteName:"s_inv_arrowheads_broadhead",
+                parentName:"o_inv_arrowheads_parent",
                 isVisible:true,
                 isAwake:true,
                 isPersistent: true, 
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
-            UndertaleGameObject lootHideGlue = Msl.AddObject(
-                name:"o_loot_hideglue",
-                spriteName:"s_loot_stardust",
+            UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_loot_arrowheads_broadhead",
+                spriteName:"s_loot_caltrops",
                 parentName:"o_consument_loot",
                 isVisible:true,
                 isAwake:true,
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
+
+            UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_inv_arrowheads_bodkin",
+                spriteName:"s_inv_arrowheads_bodkin",
+                parentName:"o_inv_arrowheads_parent",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_loot_arrowheads_bodkin",
+                spriteName:"s_loot_caltrops",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
 
 
 
@@ -1090,6 +1129,11 @@ b {jmp_end}
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Create_0.gml"),
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw),
 
+                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Create_0.gml"),
+                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Step_0.gml", EventType.Step),
+
+                new ScriptSet("o_loot_hideglue", "gml_Object_o_loot_hideglue_Create_0.gml")
+
                 new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Create_0.gml"),
                 new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Step_0.gml", EventType.Step),
                 new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Other_10.gml", EventType.Other, 10),
@@ -1098,10 +1142,13 @@ b {jmp_end}
 
                 new ScriptSet("o_loot_arrowheads_leafshaped", "gml_Object_o_loot_arrowheads_leafshaped_Create_0.gml"),
 
-                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Create_0.gml"),
-                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Step_0.gml", EventType.Step),
+                new ScriptSet("o_inv_arrowheads_broadhead", "gml_Object_o_inv_arrowheads_broadhead_Create_0.gml"),
 
-                new ScriptSet("o_loot_hideglue", "gml_Object_o_loot_hideglue_Create_0.gml")
+                new ScriptSet("o_loot_arrowheads_broadhead", "gml_Object_o_loot_arrowheads_broadhead_Create_0.gml"),
+
+                new ScriptSet("o_inv_arrowheads_bodkin", "gml_Object_o_inv_arrowheads_bodkin_Create_0.gml"),
+
+                new ScriptSet("o_loot_arrowheads_bodkin", "gml_Object_o_loot_arrowheads_bodkin_Create_0.gml"),
 
             };
 
@@ -1171,23 +1218,42 @@ b {jmp_end}
 
 
         LocalizationItem localizationTable = new(
-            "arrowheads_leafshaped",
-            "Leaf-Shaped Arrowheads",
-            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
-            "These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
-        );
-        localizationTable.InjectTable();
-
-        localizationTable = new(
             "hideglue",
             "Hide Glue",
             "A small dab of it can be used to attach ~gr~Arrowheads~/~ to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~.",
             "Worked hides that have been dried, diced, and boiled several times over. It smells much better than it tastes."
         );
         localizationTable.InjectTable();
+        
+        localizationTable = new(
+            "arrowheads_leafshaped",
+            "Leaf-Shaped Arrowheads",
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
+        
+        localizationTable = new(
+            "arrowheads_broadhead",
+            "Broadhead Arrowheads",
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "Arrowheads like these often get stuck deep in the flesh, causing massive bleeding. However, they are rather heavy, cumbersome, and have limited uses against armor. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
+        
+        localizationTable = new(
+            "arrowheads_bodkin",
+            "Bodkin Arrowheads",
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "Bodkin arrowheads are designed to penetrate light armor, but they lack sheer stopping power. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
 
-        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        
         Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "hideglue", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.organic, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_broadhead", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_bodkin", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
@@ -1304,7 +1370,7 @@ b {jmp_end}
             tempSprite.GMS2PlaybackSpeed = 1;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
 
-            tempSprite = Msl.GetSprite("s_inv_arrowheads_leafshaped");
+            tempSprite = Msl.GetSprite("s_inv_hideglue");
             tempSprite.OriginX = 0;
             tempSprite.OriginY = 0;
             tempSprite.IsSpecialType = true;
@@ -1312,7 +1378,21 @@ b {jmp_end}
             tempSprite.GMS2PlaybackSpeed = 15;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
 
-            tempSprite = Msl.GetSprite("s_inv_hideglue");
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_leafshaped");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_broadhead");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_bodkin");
             tempSprite.OriginX = 0;
             tempSprite.OriginY = 0;
             tempSprite.IsSpecialType = true;
