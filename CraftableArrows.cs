@@ -966,6 +966,10 @@ b {jmp_end}
                 new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
             );     
 
+            Msl.AddMenu("Arrowheads",
+                new UIComponent(name:"Arrowheads trading category", associatedGlobal:"arrowheadsTradingCat", UIComponentType.ComboBox, new string[valuables,ingredients] {"Valuables", "Ingredients",})
+            ); 
+
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
                 name:"o_inv_charredtip_arrows",
                 spriteName:"s_inv_charredtiparrows",
