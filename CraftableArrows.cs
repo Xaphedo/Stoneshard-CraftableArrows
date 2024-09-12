@@ -1063,7 +1063,7 @@ b {jmp_end}
 
             UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
                 name:"o_loot_arrowheads_leafshaped",
-                spriteName:"s_loot_caltrops",
+                spriteName:"s_loot_arrowheads_generic",
                 parentName:"o_consument_loot",
                 isVisible:true,
                 isAwake:true,
@@ -1082,7 +1082,7 @@ b {jmp_end}
 
             UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
                 name:"o_loot_arrowheads_broadhead",
-                spriteName:"s_loot_caltrops",
+                spriteName:"s_loot_arrowheads_generic",
                 parentName:"o_consument_loot",
                 isVisible:true,
                 isAwake:true,
@@ -1101,7 +1101,7 @@ b {jmp_end}
 
             UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
                 name:"o_loot_arrowheads_bodkin",
-                spriteName:"s_loot_caltrops",
+                spriteName:"s_loot_arrowheads_generic",
                 parentName:"o_consument_loot",
                 isVisible:true,
                 isAwake:true,
