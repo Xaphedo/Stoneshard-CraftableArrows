@@ -1788,6 +1788,10 @@ b {jmp_end}
                 .MatchFrom("case 20:") // Finding the line
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_mid_balanced.gml") // Inserting the snippet below
                 .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_skeletonloot")
+                .MatchFrom("if scr_chance_value(35)") // Finding the line
+                .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_low_poor.gml") // Inserting the snippet below
+                .Save();
             Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
                 .MatchFrom("case 4:") // Finding the line
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_low_poor.gml") // Inserting the snippet below
