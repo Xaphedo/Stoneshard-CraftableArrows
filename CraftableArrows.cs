@@ -1767,7 +1767,7 @@ b {jmp_end}
 
 //----------------------- START OF LOOT TABLES ADDITIONS -----------------------
                
-            //-----GENERIC CONTAINERS----
+            //-----COMMON CONTAINERS----
             Msl.LoadGML("gml_GlobalScript_scr_loot_default")
                 .MatchFrom("(1 << 0))") // Finding the line
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_33pc_mid.gml") // Inserting the snippet below
@@ -1777,8 +1777,16 @@ b {jmp_end}
                 .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_arrowheads_10pc_mid.gml") // Inserting the snippet below
                 .Save();
             Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
-                .MatchFrom("(1 << 0))") // Finding the line
-                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_33pc_low_poor.gml") // Inserting the snippet below
+                .MatchFrom("case 5:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_low_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
+                .MatchFrom("case 10:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_low_balanced.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
+                .MatchFrom("case 20:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_mid_balanced.gml") // Inserting the snippet below
                 .Save();
             
             
