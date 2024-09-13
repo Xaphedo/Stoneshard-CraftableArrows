@@ -1765,7 +1765,7 @@ b {jmp_end}
 
 
 
-//----------------------- START OF LOOT TABLES ADDITIONS -----------------------
+//----------------------- START OF CONTAINERS LOOT TABLES ADDITIONS -----------------------
                
             //-----COMMON CONTAINERS----
             Msl.LoadGML("gml_GlobalScript_scr_loot_default")
@@ -1819,12 +1819,19 @@ b {jmp_end}
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_charredtip_100pc_mid.gml") // Inserting the snippet below
                 .Save();
             
-            
+//----------------------- END OF CONTAINERS LOOT TABLES ADDITIONS -----------------------
 
 
 
+//----------------------- START OF ENEMIES LOOT TABLES ADDITIONS -----------------------
 
-//----------------------- END OF LOOT TABLES ADDITIONS -----------------------
+            Msl.LoadGML("gml_Object_o_bandit_poacher_Create_0")
+                .MatchFrom("o_loot_hide_quiver") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_charredtipArrowheads_10pc_low.gml") // Inserting the snippet below
+                .Save();
+
+
+//----------------------- END OF ENEMIES LOOT TABLES ADDITIONS -----------------------
 
             
         }
