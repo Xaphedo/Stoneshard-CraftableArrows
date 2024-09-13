@@ -1770,7 +1770,15 @@ b {jmp_end}
             //-----GENERIC CONTAINERS----
             Msl.LoadGML("gml_GlobalScript_scr_loot_default")
                 .MatchFrom("(1 << 0))") // Finding the line
-                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_20pc_mid.gml") // Inserting the snippet below
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_33pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_interactive_grave_digged")
+                .MatchFrom("if scr_chance_value(1)") // Finding the line
+                .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_arrowheads_10pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
+                .MatchFrom("(1 << 0))") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_33pc_low_poor.gml") // Inserting the snippet below
                 .Save();
             
             
