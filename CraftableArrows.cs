@@ -1808,6 +1808,12 @@ b {jmp_end}
                 .MatchFrom("default:") // Finding the line
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_balanced.gml") // Inserting the snippet below
                 .Save();
+
+            //-----PRE-SET CONTAINERS-----
+            Msl.LoadGML("gml_GlobalScript_scr_loot_weaponstand03")
+                .MatchFrom("scr_inventory_add_item(o_inv_leafshaped_bolts)") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_charredtip_100pc_mid.gml") // Inserting the snippet below
+                .Save();
             
             
 
