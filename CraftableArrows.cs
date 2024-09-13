@@ -1823,14 +1823,19 @@ b {jmp_end}
 
 
 
-//----------------------- START OF ENEMIES LOOT TABLES ADDITIONS -----------------------
+//----------------------- START OF ENEMIES LOOT TABLES ADDITIONS ----------------------- Adding stackable items to enemy drops seems quite different and challenging. For a later update.
 
+            //-----COMMON ENEMIES----
+/*
             Msl.LoadGML("gml_Object_o_bandit_poacher_Create_0")
                 .MatchFrom("o_loot_hide_quiver") // Finding the line
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_charredtipArrowheads_10pc_low.gml") // Inserting the snippet below
                 .Save();
-
-
+            Msl.LoadGML("gml_Object_o_bandit_longbowman_Create_0")
+                .MatchFrom("if scr_chance_value(8, 1)") // Finding the line
+                .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_Arrowheads_10pc_mix.gml") // Inserting the snippet below
+                .Save();
+*/
 //----------------------- END OF ENEMIES LOOT TABLES ADDITIONS -----------------------
 
             
