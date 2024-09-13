@@ -1413,6 +1413,7 @@ b {jmp_end}
 
 
             // IMPORTANT : this is temporary and for testing purposes. The items will be distributed among more appropriate traders
+            /*
             Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
                 .MatchFrom("event_inherited()") // Finding the line
                 .InsertBelow("stacked_items_stock = []") // Inserting the snippet above
@@ -1421,7 +1422,7 @@ b {jmp_end}
                 .MatchFrom("gold_k") // Finding the line
                 .InsertBelow(ModFiles, "gml_Object_o_npc_Innkeeper_Create_0_add.gml") // Inserting the snippet above
                 .Save();
-
+            */
 
             // This part adds the capability of adding a variable amount of stackable items to a trader's inventory
             Msl.LoadGML("gml_Object_o_NPC_Other_24")
