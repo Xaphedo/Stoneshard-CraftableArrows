@@ -1463,6 +1463,312 @@ b {jmp_end}
                 .Apply(CreateContextMenuAssemblyIterator)
                 //.Peek()
                 .Save();
+
+
+
+
+//----------------------- START OF TRADERS INVENTORY ADDITIONS -----------------------
+
+
+            //-----VILLAGE PEASANTS-----
+            Msl.LoadGML("gml_Object_o_npc_peasant_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_peasant_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_15pc_few.gml") // Inserting the snippet below
+                .Save();
+
+            //-----BRYNN TOWNSPEOPLE-----
+            Msl.LoadGML("gml_Object_o_npc_brynn_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_brynn_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_5pc_mid.gml") // Inserting the snippet below
+                .Save();
+
+            //-----INNKEEPERS-----
+            Msl.LoadGML("gml_Object_o_class_innkeeper_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_class_innkeeper_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_few.gml") // Inserting the snippet below
+                .Save();
+
+            //-----GUARDS-----
+            Msl.LoadGML("gml_Object_o_npc_guard_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_guard_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_Mixpc_few.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_guard_brynn_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_guard_brynn_Create_0")
+                .MatchFrom("scr_npc_dialogue_init") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_Mixpc_few.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----SMITHS-----
+            Msl.LoadGML("gml_Object_o_npc_smith_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_mannshire_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_mannshire_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_smith01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_smith01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_brynn_smith_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_brynn_smith_Create_0")
+                .MatchFrom("can_repair") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER SMITHS-----
+            Msl.LoadGML("gml_Object_o_npc_pawnshop_owner_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_pawnshop_owner_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_50pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----MERCHANTS-----
+            Msl.LoadGML("gml_Object_o_npc_merchant_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant_mannshire_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant_mannshire_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_Merchant01d_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_Merchant01d_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant01MS_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant01MS_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----CARPENTERS-----
+            Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_carpenter_mannshire_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_carpenter_mannshire_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_carpenter01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_carpenter01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter02gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter02gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter03gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter03gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter04gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter04gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER CARPENTERS-----
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_midChoose.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter02gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter02gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_midChoose.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----GUILD TAILORS----
+            Msl.LoadGML("gml_Object_o_npc_vogt_tailor01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_tailor01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----TAILORS----
+            Msl.LoadGML("gml_Object_o_npc_tailor_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_tailor_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor02gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor02gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor03gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor03gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor04gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor04gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER TAILORS----
+            Msl.LoadGML("gml_Object_o_npc_smith_son_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_son_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_low.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_tailor01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_tailor01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_low.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----SURVIVALISTS----
+            Msl.LoadGML("gml_Object_o_npc_trapperA_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_trapperA_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtip_100pc_low.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER DRUG DEALERS----
+            Msl.LoadGML("gml_Object_o_npc_drugdealer_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_drugdealer_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_50pc_low.gml") // Inserting the snippet below
+                .Save();
+
+
+//----------------------- END OF TRADERS INVENTORY ADDITIONS -----------------------
+
+            
+            
+
+
             
         }
     }
