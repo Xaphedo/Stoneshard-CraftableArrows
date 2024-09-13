@@ -1788,6 +1788,26 @@ b {jmp_end}
                 .MatchFrom("case 20:") // Finding the line
                 .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_mid_balanced.gml") // Inserting the snippet below
                 .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 4:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_low_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 9:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 14:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_balanced.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 19:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_lots_wealthy.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("default:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_balanced.gml") // Inserting the snippet below
+                .Save();
             
             
 
