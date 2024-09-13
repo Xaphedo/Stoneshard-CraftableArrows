@@ -1469,7 +1469,6 @@ b {jmp_end}
 
 //----------------------- START OF TRADERS INVENTORY ADDITIONS -----------------------
 
-
             //-----VILLAGE PEASANTS-----
             Msl.LoadGML("gml_Object_o_npc_peasant_Create_0")
                 .MatchFrom("event_inherited()") // Finding the line
@@ -1762,12 +1761,24 @@ b {jmp_end}
                 .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_50pc_low.gml") // Inserting the snippet below
                 .Save();
 
-
 //----------------------- END OF TRADERS INVENTORY ADDITIONS -----------------------
 
+
+
+//----------------------- START OF LOOT TABLES ADDITIONS -----------------------
+               
+            //-----GENERIC CONTAINERS----
+            Msl.LoadGML("gml_GlobalScript_scr_loot_default")
+                .MatchFrom("(1 << 0))") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_20pc_mid.gml") // Inserting the snippet below
+                .Save();
             
             
 
+
+
+
+//----------------------- END OF LOOT TABLES ADDITIONS -----------------------
 
             
         }
