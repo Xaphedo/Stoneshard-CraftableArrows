@@ -31,7 +31,7 @@ namespace CraftableArrows
         public override string Author => "Xaphedo";
         public override string Name => "Craftable Arrows";
         public override string Description => "Use a cooking fire and a bladed weapon to turn sticks into cheap arrows and bolts";
-        public override string Version => "2-0-dev-02";
+        public override string Version => "2-0-0-0";
         public override string TargetVersion => "0.8.2.10";
 
 
@@ -952,6 +952,10 @@ b {jmp_end}
         public override void PatchMod()
         {
 
+            Msl.AddMenu("Arrowheads",
+                 new UIComponent(name:"Harder to sell", associatedGlobal:"arrowheadsHarderTrading", UIComponentType.CheckBox, 0, true)
+            );
+
             Msl.AddMenu("Charred-Tip Arrows",
                 new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, true),
                 new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, true),
@@ -965,10 +969,6 @@ b {jmp_end}
                 new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, true),
                 new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, true)
             );     
-
-            Msl.AddMenu("Arrowheads",
-                 new UIComponent(name:"Arrowheads trading category", associatedGlobal:"arrowheadsTradingCat", UIComponentType.ComboBox, new[] {"valuable", "ingredient","ammo"}, true)
-            );
             
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
                 name:"o_inv_charredtip_arrows",
@@ -1181,11 +1181,13 @@ b {jmp_end}
 
             Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_chartipbolts_for_arrowheads.gml"), "scr_check_chartipbolts_for_arrowheads");
 
-            
+            /*
             Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
                 .Apply(CarpenterIterator)
                 //.Peek()
                 .Save();
+            */
+
 
             Msl.LoadGML("gml_GlobalScript_table_weapons_text")
                 .Apply(LogWeaponTextIterator0)
@@ -1255,9 +1257,9 @@ b {jmp_end}
 
         
         Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "hideglue", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.organic, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
-        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
-        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_broadhead", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
-        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_bodkin", Msl.ConsumParamCategory.valuable, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_broadhead", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_bodkin", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
@@ -1466,10 +1468,19 @@ b {jmp_end}
                 .Save();
 
 
+//----------------------- CLUNKY BUT NECESSARY ALTERNATIVE TO TRADERS INVENTORY ADDITIONS -----------------------
+
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_npc_stacked_items_stock_set.gml"), "scr_npc_stacked_items_stock_set");
+
+            Msl.LoadGML("gml_Object_o_NPC_Other_24")
+                .MatchFrom("scr_village_reputation_check()") // Finding the line
+                .InsertAbove("scr_npc_stacked_items_stock_set()") // Inserting the snippet below
+                .Save();
 
 
 //----------------------- START OF TRADERS INVENTORY ADDITIONS -----------------------
-
+/*
             //-----VILLAGE PEASANTS-----
             Msl.LoadGML("gml_Object_o_npc_peasant_Create_0")
                 .MatchFrom("event_inherited()") // Finding the line
@@ -1762,6 +1773,7 @@ b {jmp_end}
                 .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_50pc_low.gml") // Inserting the snippet below
                 .Save();
 
+*/
 //----------------------- END OF TRADERS INVENTORY ADDITIONS -----------------------
 
 
