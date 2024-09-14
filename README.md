@@ -8,17 +8,23 @@ Currently adding:
 
 Download the compiled file (not updated to v2 yet) [on Nexus Mods](https://www.nexusmods.com/stoneshard/mods/32/).
 
+&nbsp;
+
+<img width="1415" alt="CraftableArrowsFlowchart_Arrowheads_x10" src="https://github.com/user-attachments/assets/a5d5bd12-817c-44cf-ac38-ec7ab43d1585">
+
+&nbsp;
 
 ![StoneShard_vyC8W7QG3a](https://github.com/user-attachments/assets/db03c6c8-6740-4d98-b9c0-1387527452e5)
 
 &nbsp;
 
-<img width="705" style="max-width:705px" alt="ShareX_PAg3xd6zo8" src="https://github.com/user-attachments/assets/b24d9a42-d351-47b6-b2fc-eb042f7719fd">
+<img width="705" alt="ShareX_PAg3xd6zo8" src="https://github.com/user-attachments/assets/b24d9a42-d351-47b6-b2fc-eb042f7719fd">
 
 &nbsp;
 
-<img width="644" style="max-width:644px" alt="StoneShard_JADCcaZlAu" src="https://github.com/user-attachments/assets/a689be44-8e45-459b-a12e-1f45d4c952cb">
+<img width="1410" alt="CraftableArrowsSprites_Arrowheads_x10" src="https://github.com/user-attachments/assets/284bf885-ab3f-4575-acb9-b26c48b45856">
+
 
 &nbsp;
 
-<img width="1003" style="max-width:1003px" alt="StoneShard_D2tLbYIKN5" src="https://github.com/user-attachments/assets/4b1692c1-1f16-4466-8bd2-7d6c1cb6df16">
+<img width="1512" alt="CraftableArrowsSettings_V2_x3" src="https://github.com/user-attachments/assets/2ca47cac-3473-40da-af34-9ddedc4fc259">
