@@ -2,9 +2,9 @@
 A mod for Stoneshard that lets the player buy and make arrows. 
 
 Currently adding:
-- **Charred-tip Arrows and Bolts:** these wood-only projectiles have simple fire-hardened tips, making them much weaker but also much cheaper compared to existing options.
+- **Charred-tip Arrows and Bolts:** wood-only projectiles with fire-hardened tips. They're weak, they're cheap, and they can be used as the shafts for battle-worhy arrows and bolts.
 - **Arrowheads:** all the three vanilla types, leafshaped, broadhead, and bodkin. They stack to 100 and can be bought and found in many different places. They make for convenient loot.
-- **Hide Glue:** necessary to glue arrowheads onto charred-tip arrows or bolts, producing the respective ammo. Can be bought from tailors and, in smaller quantities, carpenters.
+- **Hide Glue:** necessary for gluing arrowheads onto charred-tip arrows or bolts, producing the respective ammo. Can be bought from tailors and, in smaller quantities, carpenters.
 
 Download the compiled file (not updated to v2 yet) [on Nexus Mods](https://www.nexusmods.com/stoneshard/mods/32/).
 
