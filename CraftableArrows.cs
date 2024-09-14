@@ -30,7 +30,7 @@ namespace CraftableArrows
     {
         public override string Author => "Xaphedo";
         public override string Name => "Craftable Arrows";
-        public override string Description => "Use a cooking fire and a bladed weapon to turn sticks into cheap arrows and bolts";
+        public override string Description => "Make sticks into cheap arrows, and glue arrowheads on them to make standard arrows";
         public override string Version => "2-0-0-0";
         public override string TargetVersion => "0.8.2.10";
 
