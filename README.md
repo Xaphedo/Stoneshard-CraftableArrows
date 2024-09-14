@@ -7,7 +7,7 @@ Currently adding:
 - **Hide Glue:** necessary for gluing arrowheads onto charred-tip arrows or bolts, producing the respective ammo. Can be bought from tailors and, in smaller quantities, carpenters.
 - **Trader Stack-Splitting:** it is impossible, in the vanilla game, to purchase part of a stack from a trader. This mod fixes that.
 - **Variable Trader Stacks:** it is also impossible, in the vanilla game, for traders to genuinely have highly variable amounts of stackable items in their inventory. This mod fixes that, too.
-- **Forward-Only Compatibility:** you should be able to add this mod to an existing game without issue. Once added, however, it should not be removed unless you really know what you're doing. ALWAYS back up your save files.
+- **Forward-Only Compatibility:** you should be able to add this mod to an existing game without issue. Once added, however, it should not be removed unless you really know what you're doing. In either case, ALWAYS back up your save files.
 
 Download the compiled file (not updated to v2 yet) [on Nexus Mods](https://www.nexusmods.com/stoneshard/mods/32/).
 
