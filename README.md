@@ -17,6 +17,10 @@ Download the compiled file (not updated to v2 yet) [on Nexus Mods](https://www.n
 
 &nbsp;
 
+[<img width="398" alt="firefox_ijdJ2s2Ygg" src="https://github.com/user-attachments/assets/6215cd92-8874-44fc-8839-cb026953fe19">](https://youtu.be/FJNFfU9qq5M)
+
+&nbsp;
+
 ![StoneShard_vyC8W7QG3a](https://github.com/user-attachments/assets/db03c6c8-6740-4d98-b9c0-1387527452e5)
 
 &nbsp;
