@@ -17,7 +17,7 @@ Download the compiled file (not updated to v2 yet) [on Nexus Mods](https://www.n
 
 &nbsp;
 
-[<img width="398" alt="firefox_ijdJ2s2Ygg" src="https://github.com/user-attachments/assets/6215cd92-8874-44fc-8839-cb026953fe19">](https://youtu.be/FJNFfU9qq5M)
+[<img width="796" alt="firefox_ijdJ2s2Ygg" src="https://github.com/user-attachments/assets/6215cd92-8874-44fc-8839-cb026953fe19">](https://youtu.be/FJNFfU9qq5M)
 
 &nbsp;
 
