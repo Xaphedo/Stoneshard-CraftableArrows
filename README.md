@@ -5,6 +5,8 @@ Currently adding:
 - **Charred-tip Arrows and Bolts:** wood-only projectiles with fire-hardened tips, made from sticks at a campfire. They're weak, they're cheap, and they can be used as the shafts for battle-worthy arrows and bolts.
 - **Arrowheads:** all the three vanilla types, leafshaped, broadhead, and bodkin. They stack to 100 and can be bought and found in many different places. They make for convenient loot.
 - **Hide Glue:** necessary for gluing arrowheads onto charred-tip arrows or bolts, producing the respective ammo. Can be bought from tailors and, in smaller quantities, carpenters.
+- **Trader Stack-Splitting:** it is impossible, in the vanilla game, to purchase part of a stack from a trader. This mod fixes that.
+- **Variable Trader Stacks:** it is also impossible, in the vanilla game, for traders to genuinely have highly variable amounts of stackable items in their inventory. This mod fixes that, too.
 
 Download the compiled file (not updated to v2 yet) [on Nexus Mods](https://www.nexusmods.com/stoneshard/mods/32/).
 
