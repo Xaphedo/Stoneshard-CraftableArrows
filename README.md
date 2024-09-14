@@ -1,5 +1,5 @@
-# Stoneshard-CraftableArrows
-A mod for Stoneshard that lets the player buy and make arrows. 
+# Stoneshard-CraftableArrows v2
+A mod for Stoneshard that lets the player make arrows.
 
 Currently adding:
 - **Charred-tip Arrows and Bolts:** wood-only projectiles with fire-hardened tips, made from sticks at a campfire. They're weak, they're cheap, and they can be used as the shafts for battle-worthy arrows and bolts.
