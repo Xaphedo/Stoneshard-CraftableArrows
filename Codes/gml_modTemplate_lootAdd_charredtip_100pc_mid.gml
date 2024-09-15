@@ -1,0 +1,6 @@
+if scr_chance_value(100)
+  with (scr_inventory_add_item(o_inv_charredtip_arrows))
+    stack = irandom_range(5, 9)
+if scr_chance_value(100)
+  with (scr_inventory_add_item(o_inv_charredtip_bolts))
+    stack = irandom_range(5, 9)

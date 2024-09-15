@@ -29,9 +29,9 @@ namespace CraftableArrows
     public class CraftableArrows : Mod
     {
         public override string Author => "Xaphedo";
-        public override string Name => "Charred-Tip Arrows and Bolts";
-        public override string Description => "Use a cooking fire and a bladed weapon to turn sticks into cheap arrows and bolts";
-        public override string Version => "1.0.0.0";
+        public override string Name => "Craftable Arrows";
+        public override string Description => "Make sticks into cheap arrows, then glue arrowheads on them to make standard arrows";
+        public override string Version => "2-0-0-0";
         public override string TargetVersion => "0.8.2.10";
 
 
@@ -164,6 +164,90 @@ namespace CraftableArrows
     }
 
 
+    private static IEnumerable<string> TableConsumablesIterator0(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;Рогульки;"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;Leaf-Shaped Arrowheads;//;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
+    private static IEnumerable<string> TableConsumablesIterator1(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;Игнорируют"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;They can be attached to either ~lg~Charred-Tip Arrows~/~ or ~lg~Charred-Tip Bolts~/~ with just a dab of ~y~Hide Glue~/~.;//;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
+    private static IEnumerable<string> TableConsumablesIterator2(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;Широко"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency.;//;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
+    private static IEnumerable<string> TableConsumableParameters(IEnumerable<string> input)
+    {
+        string findtext = "\"caltrop;"; //the string that the iterator is looking for
+        
+        string inserttext = "\"arrowheads_leafshaped;other;;;;metal;Light;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;common;\", "; //the string that the iterator will insert
+        
+        foreach(string item in input)
+        {
+            if (item.Contains(findtext))
+            {
+                string newItem = item.Insert(item.IndexOf(findtext), inserttext); //this adds the new string just before the findtext string
+                yield return newItem;
+            }
+            else
+            {
+                yield return item;
+            }
+        }
+    }
+
+
 
     public static IEnumerable<string> ContextMenuMouse4AssemblyIterator(IEnumerable<string> input)
     {
@@ -196,6 +280,16 @@ dup.v 0
 push.s ""Make_Charred_Bolts""
 cmp.s.v EQ
 bt [1010]
+
+dup.v 0
+push.s ""Arrowheads_Make_Arrows""
+cmp.s.v EQ
+bt [1020]
+
+dup.v 0
+push.s ""Arrowheads_Make_Bolts""
+cmp.s.v EQ
+bt [1030]
 ";
             }
             else if (jmp_fill != "" && item.Contains(jmp_fill))
@@ -308,7 +402,40 @@ popz.v
 
 :[1016]
 popenv [1011]
-b {jmp_end}";
+b {jmp_end}
+
+
+:[1020]
+push.v self.interact_id
+pushi.e -9
+pushenv [1022]
+
+:[1021]
+pushi.e o_inv_charredtip_arrows
+conv.i.v
+call.i gml_Script_scr_glueArrowheads(argc=1)
+popz.v
+
+:[1022]
+popenv [1021]
+b {jmp_end}
+
+
+:[1030]
+push.v self.interact_id
+pushi.e -9
+pushenv [1032]
+
+:[1031]
+pushi.e o_inv_charredtip_bolts
+conv.i.v
+call.i gml_Script_scr_glueArrowheads(argc=1)
+popz.v
+
+:[1032]
+popenv [1031]
+b {jmp_end}
+";
             }
         }
         
@@ -344,6 +471,16 @@ dup.v 0
 push.s ""Make_Charred_Bolts""
 cmp.s.v EQ
 bt [2200]
+
+dup.v 0
+push.s ""Arrowheads_Make_Arrows""
+cmp.s.v EQ
+bt [2400]
+
+dup.v 0
+push.s ""Arrowheads_Make_Bolts""
+cmp.s.v EQ
+bt [2600]
 ";
             }
             else if (jmp_fill != "" && item.Contains(jmp_fill))
@@ -596,7 +733,218 @@ call.i ds_list_add(argc=3)
 popz.v
 
 :[2218]
-b {jmp_end}";
+b {jmp_end}
+
+:[2400]
+pushglb.v global.context_menu_arrowheadsMakeArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+push.s ""Arrowheads_Make_Arrows""
+conv.s.v
+push.v self.context_name
+call.i ds_list_add(argc=3)
+popz.v
+call.i gml_Script_scr_check_chartiparrows_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2402]
+
+:[2401]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2403]
+
+:[2402]
+push.e 0
+
+:[2403]
+bf [2405]
+
+:[2404]
+pushglb.v global.context_menu_noGlueNoCharredtipArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2416]
+
+:[2405]
+call.i gml_Script_scr_check_chartiparrows_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2407]
+
+:[2406]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+b [2408]
+
+:[2407]
+push.e 0
+
+:[2408]
+bf [2410]
+
+:[2409]
+pushglb.v global.context_menu_yesGlueNoCharredtipArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2416]
+
+:[2410]
+call.i gml_Script_scr_check_chartiparrows_for_arrowheads(argc=0)
+conv.v.b
+bf [2412]
+
+:[2411]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2413]
+
+:[2412]
+push.e 0
+
+:[2413]
+bf [2415]
+
+:[2414]
+pushglb.v global.context_menu_noGlueYesCharredtipArrowsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2416]
+
+:[2415]
+pushi.e 0
+conv.i.v
+pushi.e 1
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+
+:[2416]
+b {jmp_end}
+
+:[2600]
+pushglb.v global.context_menu_arrowheadsMakeBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+push.s ""Arrowheads_Make_Bolts""
+conv.s.v
+push.v self.context_name
+call.i ds_list_add(argc=3)
+popz.v
+call.i gml_Script_scr_check_chartipbolts_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2602]
+
+:[2601]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2603]
+
+:[2602]
+push.e 0
+
+:[2603]
+bf [2605]
+
+:[2604]
+pushglb.v global.context_menu_noGlueNoCharredtipBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2616]
+
+:[2605]
+call.i gml_Script_scr_check_chartipbolts_for_arrowheads(argc=0)
+conv.v.b
+not.b
+bf [2607]
+
+:[2606]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+b [2608]
+
+:[2607]
+push.e 0
+
+:[2608]
+bf [2610]
+
+:[2609]
+pushglb.v global.context_menu_yesGlueNoCharredtipBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2616]
+
+:[2610]
+call.i gml_Script_scr_check_chartipbolts_for_arrowheads(argc=0)
+conv.v.b
+bf [2612]
+
+:[2611]
+call.i gml_Script_scr_check_hideglue_for_arrowheads(argc=0)
+conv.v.b
+not.b
+b [2613]
+
+:[2612]
+push.e 0
+
+:[2613]
+bf [2615]
+
+:[2614]
+pushglb.v global.context_menu_noGlueYesCharredtipBoltsID
+pushglb.v global.context_menu
+call.i ds_list_find_value(argc=2)
+pushi.e 0
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+b [2616]
+
+:[2615]
+pushi.e 0
+conv.i.v
+pushi.e 1
+conv.i.v
+push.v self.context_desc
+call.i ds_list_add(argc=3)
+popz.v
+
+:[2616]
+b {jmp_end}
+";
             }
         }
     }
@@ -604,26 +952,31 @@ b {jmp_end}";
         public override void PatchMod()
         {
 
+            Msl.AddMenu("Arrowheads",
+                 new UIComponent(name:"Harder to sell", associatedGlobal:"arrowheadsHarderTrading", UIComponentType.CheckBox, 0, true)
+            );
+
             Msl.AddMenu("Charred-Tip Arrows",
-                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, false),
-                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, false),
-                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoArrowsDamage", UIComponentType.Slider, (-100, 100), -50, false),
-                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoArrowsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
+                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMin", UIComponentType.Slider, (0, 20), 1, true),
+                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoArrowsMax", UIComponentType.Slider, (0, 20), 2, true),
+                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoArrowsDamage", UIComponentType.Slider, (-100, 100), -50, true),
+                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoArrowsArmorP", UIComponentType.Slider, (-100, 100), -50, true)
             ); 
 
             Msl.AddMenu("Charred-Tip Bolts",
-                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMin", UIComponentType.Slider, (0, 20), 1, false),
-                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMax", UIComponentType.Slider, (0, 20), 2, false),
-                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, false),
-                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, false)
+                new UIComponent(name:"Min from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMin", UIComponentType.Slider, (0, 20), 1, true),
+                new UIComponent(name:"Max from 1 stick", associatedGlobal:"makeCharredAmmoBoltsMax", UIComponentType.Slider, (0, 20), 2, true),
+                new UIComponent(name:"Damage % modifier", associatedGlobal:"charredAmmoBoltsDamage", UIComponentType.Slider, (-100, 100), -50, true),
+                new UIComponent(name:"Armor Penetr. % mod.", associatedGlobal:"charredAmmoBoltsArmorP", UIComponentType.Slider, (-100, 100), -50, true)
             );     
-
+            
             UndertaleGameObject invCharredTipArrows = Msl.AddObject(
                 name:"o_inv_charredtip_arrows",
                 spriteName:"s_inv_charredtiparrows",
                 parentName:"o_inv_arrows_parent",
                 isVisible:true,
                 isAwake:true,
+                isPersistent: true, 
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
@@ -652,6 +1005,7 @@ b {jmp_end}";
                 parentName:"o_inv_bolts_parent",
                 isVisible:true,
                 isAwake:true,
+                isPersistent: true, 
                 collisionShapeFlags:CollisionShapeFlags.Circle
             );
 
@@ -673,6 +1027,94 @@ b {jmp_end}";
                 collisionShapeFlags:CollisionShapeFlags.Box
             );
 
+            UndertaleGameObject invHideGlue = Msl.AddObject(
+                name:"o_inv_hideglue",
+                spriteName:"s_inv_hideglue",
+                parentName:"o_inv_consum_passive",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootHideGlue = Msl.AddObject(
+                name:"o_loot_hideglue",
+                spriteName:"s_loot_hideglue",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+            
+            UndertaleGameObject invArrowheadsParent = Msl.AddObject(
+                name:"o_inv_arrowheads_parent", //based on o_inv_ammunition_parent
+                parentName:"o_inv_consum_passive",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject invArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_inv_arrowheads_leafshaped",
+                spriteName:"s_inv_arrowheads_leafshaped",
+                parentName:"o_inv_arrowheads_parent",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootArrowheadsLeafshaped = Msl.AddObject(
+                name:"o_loot_arrowheads_leafshaped",
+                spriteName:"s_loot_arrowheads_generic",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject invArrowheadsBroadhead = Msl.AddObject(
+                name:"o_inv_arrowheads_broadhead",
+                spriteName:"s_inv_arrowheads_broadhead",
+                parentName:"o_inv_arrowheads_parent",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootArrowheadsBroadhead = Msl.AddObject(
+                name:"o_loot_arrowheads_broadhead",
+                spriteName:"s_loot_arrowheads_generic",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject invArrowheadsBodkin = Msl.AddObject(
+                name:"o_inv_arrowheads_bodkin",
+                spriteName:"s_inv_arrowheads_bodkin",
+                parentName:"o_inv_arrowheads_parent",
+                isVisible:true,
+                isAwake:true,
+                isPersistent: true, 
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+            UndertaleGameObject lootArrowheadsBodkin = Msl.AddObject(
+                name:"o_loot_arrowheads_bodkin",
+                spriteName:"s_loot_arrowheads_generic",
+                parentName:"o_consument_loot",
+                isVisible:true,
+                isAwake:true,
+                collisionShapeFlags:CollisionShapeFlags.Circle
+            );
+
+
+
+
 
             //listing all the scripts to create.
             ScriptSet[] scriptsToAdd = new ScriptSet[]
@@ -689,7 +1131,28 @@ b {jmp_end}";
                 new ScriptSet("o_loot_charredtip_bolts", "gml_Object_o_loot_charredtip_bolts_Create_0.gml"),
                 
                 new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Create_0.gml"),
-                new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw)
+                new ScriptSet("o_charredtip_bolt_used", "gml_Object_o_charredtip_bolt_used_Draw_0.gml", EventType.Draw),
+
+                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Create_0.gml"),
+                new ScriptSet("o_inv_hideglue", "gml_Object_o_inv_hideglue_Step_0.gml", EventType.Step),
+
+                new ScriptSet("o_loot_hideglue", "gml_Object_o_loot_hideglue_Create_0.gml"),
+
+                new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Create_0.gml"),
+                new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Step_0.gml", EventType.Step),
+                new ScriptSet("o_inv_arrowheads_parent", "gml_Object_o_inv_arrowheads_parent_Other_10.gml", EventType.Other, 10),
+
+                new ScriptSet("o_inv_arrowheads_leafshaped", "gml_Object_o_inv_arrowheads_leafshaped_Create_0.gml"),
+
+                new ScriptSet("o_loot_arrowheads_leafshaped", "gml_Object_o_loot_arrowheads_leafshaped_Create_0.gml"),
+
+                new ScriptSet("o_inv_arrowheads_broadhead", "gml_Object_o_inv_arrowheads_broadhead_Create_0.gml"),
+
+                new ScriptSet("o_loot_arrowheads_broadhead", "gml_Object_o_loot_arrowheads_broadhead_Create_0.gml"),
+
+                new ScriptSet("o_inv_arrowheads_bodkin", "gml_Object_o_inv_arrowheads_bodkin_Create_0.gml"),
+
+                new ScriptSet("o_loot_arrowheads_bodkin", "gml_Object_o_loot_arrowheads_bodkin_Create_0.gml")
 
             };
 
@@ -710,11 +1173,21 @@ b {jmp_end}";
 
             Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_makeCharredAmmo.gml"), "scr_makeCharredAmmo");
 
-            
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_glueArrowheads.gml"), "scr_glueArrowheads");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_hideglue_for_arrowheads.gml"), "scr_check_hideglue_for_arrowheads");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_chartiparrows_for_arrowheads.gml"), "scr_check_chartiparrows_for_arrowheads");
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_check_chartipbolts_for_arrowheads.gml"), "scr_check_chartipbolts_for_arrowheads");
+
+            /*
             Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
                 .Apply(CarpenterIterator)
                 //.Peek()
                 .Save();
+            */
+
 
             Msl.LoadGML("gml_GlobalScript_table_weapons_text")
                 .Apply(LogWeaponTextIterator0)
@@ -725,6 +1198,68 @@ b {jmp_end}";
                 .Apply(LogWeaponTextIterator1)
                 //.Peek()
                 .Save();
+
+/*
+            Msl.LoadGML("gml_GlobalScript_table_consumables")
+                .Apply(TableConsumablesIterator0)
+                //.Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_consumables")
+                .Apply(TableConsumablesIterator1)
+                //.Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_consumables")
+                .Apply(TableConsumablesIterator2)
+                .Peek()
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_table_Consumable_Parameters")
+                .Apply(TableConsumableParameters)
+                .Peek()
+                .Save();
+
+*/
+
+
+        LocalizationItem localizationTable = new(
+            "hideglue",
+            "Hide Glue",
+            "A small dab of it can be used to attach ~gr~Arrowheads~/~ to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~.",
+            "Worked hides that have been dried, diced, and boiled several times over. It smells much better than it tastes."
+        );
+        localizationTable.InjectTable();
+        
+        localizationTable = new(
+            "arrowheads_leafshaped",
+            "Leaf-Shaped Arrowheads",
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "These common arrowheads are equally suitable for both hunting and warfare. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
+        
+        localizationTable = new(
+            "arrowheads_broadhead",
+            "Broadhead Arrowheads",
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "Arrowheads like these often get stuck deep in the flesh, causing massive bleeding. However, they are rather heavy, cumbersome, and have limited uses against armor. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
+        
+        localizationTable = new(
+            "arrowheads_bodkin",
+            "Bodkin Arrowheads",
+            "They can be attached to either ~sy~Charred-Tip Arrows~/~ or ~sy~Charred-Tip Bolts~/~ with just a dab of ~o~Hide Glue~/~.",
+            "Bodkin arrowheads are designed to penetrate light armor, but they lack sheer stopping power. Arrowheads can be found anywhere in Aldor, as they are easy to carry and they hold their value almost as reliably as any currency."
+        );
+        localizationTable.InjectTable();
+
+        
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "hideglue", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.organic, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_leafshaped", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_broadhead", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
+        Msl.InjectTableConsumableParameters(Msl.ConsumParamMetaGroup.JUNKMATERIALS, "arrowheads_bodkin", Msl.ConsumParamCategory.ingredient, Msl.ConsumParamMaterial.metal, Msl.ConsumParamWeight.Light, Msl.ConsumParamSubCategory.none, Msl.ConsumParamTags.common, 0);
 
             Msl.LoadGML("gml_Object_o_campfire01_Mouse_5")
                 .Apply(CampfireContextIterator)
@@ -779,6 +1314,17 @@ b {jmp_end}";
                 .InsertBelow(ModFiles, "gml_Object_o_textLoader_Other_25_add.gml") // Inserting the snippet above
                 .Save();
 
+            /*Msl.LoadGML("gml_Object_o_knight_maiden_Create_0")
+                .MatchFrom("scr_inventory_add_item(o_inv_map_osbrook)") // Finding the line
+                .InsertBelow("scr_inventory_add_item(o_inv_arrowheads_leafshaped)") // Inserting the snippet below
+                .Save();*/
+
+            Msl.LoadGML("gml_Object_o_inv_slot_Mouse_5")
+                .MatchFrom("else if object_is_ancestor(object_index, o_inv_ammunition_parent)")
+                .InsertAbove(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add1.gml")
+                .Save();
+
+
             UndertaleSprite 
             tempSprite = Msl.GetSprite("s_inv_charredtiparrows");
             tempSprite.OriginX = 0; //13;
@@ -829,6 +1375,77 @@ b {jmp_end}";
             tempSprite.SVersion = 3;
             tempSprite.GMS2PlaybackSpeed = 1;
             tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
+            tempSprite = Msl.GetSprite("s_inv_hideglue");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_leafshaped");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_broadhead");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+            tempSprite = Msl.GetSprite("s_inv_arrowheads_bodkin");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite.IsSpecialType = true;
+            tempSprite.SVersion = 3;
+            tempSprite.GMS2PlaybackSpeed = 15;
+            tempSprite.GMS2PlaybackSpeedType = AnimSpeedType.FramesPerSecond;
+
+            tempSprite = Msl.GetSprite("s_loot_arrowheads_generic");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+            tempSprite = Msl.GetSprite("s_loot_hideglue");
+            tempSprite.OriginX = 0;
+            tempSprite.OriginY = 0;
+
+
+            // IMPORTANT : this is temporary and for testing purposes. The items will be distributed among more appropriate traders
+            /*
+            Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet above
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_Innkeeper_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_Object_o_npc_Innkeeper_Create_0_add.gml") // Inserting the snippet above
+                .Save();
+            */
+
+            // This part adds the capability of adding a variable amount of stackable items to a trader's inventory
+            Msl.LoadGML("gml_Object_o_NPC_Other_24")
+                .MatchFrom("with (scr_guiCreateContainer(global.guiBaseContainerSideLeft, o_trade_inventory))") // Finding the line
+                .InsertAbove(ModFiles, "gml_Object_o_NPC_Other_24_add0.gml") // Inserting the snippet above
+                .Save();
+            Msl.LoadGML("gml_Object_o_NPC_Other_24")
+                .MatchFrom("var g = math_round(owner.gold_k)") // Finding the line
+                .InsertAbove(ModFiles, "gml_Object_o_NPC_Other_24_add1.gml") // Inserting the snippet above
+                .Save();
+
+            //This part adds the functionality of splitting stacks within a trader's inventory
+            Msl.LoadGML("gml_Object_o_inv_slot_Mouse_5")
+                .MatchFrom(ModFiles, "gml_Object_o_inv_slot_Mouse_5_match.gml")
+                .ReplaceBy(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add0.gml")
+                .Save();
+            Msl.LoadGML("gml_Object_o_split_stack_slider_Other_10")
+                .MatchFrom(ModFiles, "gml_Object_o_split_stack_slider_Other_10_match.gml")
+                .ReplaceBy(ModFiles, "gml_Object_o_split_stack_slider_Other_10_add.gml")
+                .Save();
+
                 
             //Msl.LoadGML("gml_Object_o_context_button_Mouse_4")
             //    .MatchFrom("case \"Cook\"") // Finding the line
@@ -849,6 +1466,391 @@ b {jmp_end}";
                 .Apply(CreateContextMenuAssemblyIterator)
                 //.Peek()
                 .Save();
+
+
+//----------------------- CLUNKY BUT NECESSARY ALTERNATIVE TO TRADERS INVENTORY ADDITIONS -----------------------
+
+
+            Msl.AddFunction(ModFiles.GetCode("gml_GlobalScript_scr_npc_stacked_items_stock_set.gml"), "scr_npc_stacked_items_stock_set");
+
+            Msl.LoadGML("gml_Object_o_NPC_Other_24")
+                .MatchFrom("scr_village_reputation_check()") // Finding the line
+                .InsertAbove("scr_npc_stacked_items_stock_set()") // Inserting the snippet below
+                .Save();
+
+
+//----------------------- START OF TRADERS INVENTORY ADDITIONS -----------------------
+/*
+            //-----VILLAGE PEASANTS-----
+            Msl.LoadGML("gml_Object_o_npc_peasant_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_peasant_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_15pc_few.gml") // Inserting the snippet below
+                .Save();
+
+            //-----BRYNN TOWNSPEOPLE-----
+            Msl.LoadGML("gml_Object_o_npc_brynn_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_brynn_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_5pc_mid.gml") // Inserting the snippet below
+                .Save();
+
+            //-----INNKEEPERS-----
+            Msl.LoadGML("gml_Object_o_class_innkeeper_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_class_innkeeper_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_few.gml") // Inserting the snippet below
+                .Save();
+
+            //-----GUARDS-----
+            Msl.LoadGML("gml_Object_o_npc_guard_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_guard_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_Mixpc_few.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_guard_brynn_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_guard_brynn_Create_0")
+                .MatchFrom("scr_npc_dialogue_init") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_Mixpc_few.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----SMITHS-----
+            Msl.LoadGML("gml_Object_o_npc_smith_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_mannshire_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_mannshire_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_smith01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_smith01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_brynn_smith_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_brynn_smith_Create_0")
+                .MatchFrom("can_repair") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER SMITHS-----
+            Msl.LoadGML("gml_Object_o_npc_pawnshop_owner_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_pawnshop_owner_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheads_50pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----MERCHANTS-----
+            Msl.LoadGML("gml_Object_o_npc_merchant_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant_mannshire_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant_mannshire_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_Merchant01d_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_Merchant01d_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant01MS_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_merchant01MS_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_arrowheadsRare_30pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----CARPENTERS-----
+            Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_carpenter_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_carpenter_mannshire_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_carpenter_mannshire_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_carpenter01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_carpenter01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter02gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter02gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter03gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter03gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter04gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_carpenter04gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER CARPENTERS-----
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_midChoose.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter02gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_carpenter02gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtipGlueArrowheads_100pc_midChoose.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----GUILD TAILORS----
+            Msl.LoadGML("gml_Object_o_npc_vogt_tailor01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_vogt_tailor01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_lots.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----TAILORS----
+            Msl.LoadGML("gml_Object_o_npc_tailor_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_tailor_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor02gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor02gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor03gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor03gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor04gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_artisan_tailor04gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER TAILORS----
+            Msl.LoadGML("gml_Object_o_npc_smith_son_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_smith_son_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_low.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_tailor01gq_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_apprentice_tailor01gq_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_100pc_low.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----SURVIVALISTS----
+            Msl.LoadGML("gml_Object_o_npc_trapperA_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_trapperA_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_charredtip_100pc_low.gml") // Inserting the snippet below
+                .Save();
+                
+            //-----LESSER DRUG DEALERS----
+            Msl.LoadGML("gml_Object_o_npc_drugdealer_Create_0")
+                .MatchFrom("event_inherited()") // Finding the line
+                .InsertBelow("stacked_items_stock = []") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_npc_drugdealer_Create_0")
+                .MatchFrom("gold_k") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_traderAdd_glue_50pc_low.gml") // Inserting the snippet below
+                .Save();
+
+*/
+//----------------------- END OF TRADERS INVENTORY ADDITIONS -----------------------
+
+
+
+//----------------------- START OF CONTAINERS LOOT TABLES ADDITIONS -----------------------
+               
+            //-----COMMON CONTAINERS----
+            Msl.LoadGML("gml_GlobalScript_scr_loot_default")
+                .MatchFrom("(1 << 0))") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_33pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_interactive_grave_digged")
+                .MatchFrom("if scr_chance_value(1)") // Finding the line
+                .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_arrowheads_10pc_mid.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
+                .MatchFrom("case 5:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_low_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
+                .MatchFrom("case 10:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_low_balanced.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_nightstand01")
+                .MatchFrom("case 20:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_3pc_mid_balanced.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_skeletonloot")
+                .MatchFrom("if scr_chance_value(35)") // Finding the line
+                .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_low_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 4:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_low_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 9:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_poor.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 14:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_balanced.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("case 19:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_lots_wealthy.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_GlobalScript_scr_loot_chest")
+                .MatchFrom("default:") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_arrowheads_5pc_mid_balanced.gml") // Inserting the snippet below
+                .Save();
+
+            //-----PRE-SET CONTAINERS-----
+            Msl.LoadGML("gml_GlobalScript_scr_loot_weaponstand03")
+                .MatchFrom("scr_inventory_add_item(o_inv_leafshaped_bolts)") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_charredtip_100pc_mid.gml") // Inserting the snippet below
+                .Save();
+            
+//----------------------- END OF CONTAINERS LOOT TABLES ADDITIONS -----------------------
+
+
+
+//----------------------- START OF ENEMIES LOOT TABLES ADDITIONS ----------------------- Adding stackable items to enemy drops seems quite different and challenging. For a later update.
+
+            //-----COMMON ENEMIES----
+/*
+            Msl.LoadGML("gml_Object_o_bandit_poacher_Create_0")
+                .MatchFrom("o_loot_hide_quiver") // Finding the line
+                .InsertBelow(ModFiles, "gml_modTemplate_lootAdd_charredtipArrowheads_10pc_low.gml") // Inserting the snippet below
+                .Save();
+            Msl.LoadGML("gml_Object_o_bandit_longbowman_Create_0")
+                .MatchFrom("if scr_chance_value(8, 1)") // Finding the line
+                .InsertAbove(ModFiles, "gml_modTemplate_lootAdd_Arrowheads_10pc_mix.gml") // Inserting the snippet below
+                .Save();
+*/
+//----------------------- END OF ENEMIES LOOT TABLES ADDITIONS -----------------------
+
             
         }
     }
