@@ -1324,6 +1324,29 @@ b {jmp_end}
                 .InsertAbove(ModFiles, "gml_Object_o_inv_slot_Mouse_5_add1.gml")
                 .Save();
 
+//-------start of BLUNT, BARBED, AND OTHER AMMO THAT CHANGE BREAKING CHANCES AND DAMAGE TYPE
+
+            Msl.LoadGML("gml_Object_o_arrow_Other_10")
+                .MatchFrom("var _arrow = id")
+                .InsertBelow("global.temp_loot_object_projectile = object_get_name(loot_object)")
+                .Save();
+
+            Msl.LoadGML("gml_Object_o_arrow_Other_10")
+                .MatchFrom("if scr_chance_value(_arrowInsertChance)")
+                .InsertAbove(ModFiles, "gml_Object_o_arrow_Other_10_add.gml")
+                .Save();
+
+            Msl.LoadGML("gml_GlobalScript_scr_damage_calculation")
+                .MatchFrom("var _AllDamage")
+                .InsertAbove(ModFiles, "gml_GlobalScript_scr_damage_calculation_add.gml")
+                .Save();
+                
+//-------end of BLUNT, BARBED, AND OTHER AMMO THAT CHANGE BREAKING CHANCES AND DAMAGE TYPE
+
+
+
+
+
 
             UndertaleSprite 
             tempSprite = Msl.GetSprite("s_inv_charredtiparrows");
